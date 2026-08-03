@@ -1,132 +1,198 @@
 # etsy-niche-research
 
-Two CLI tools for finding and listing digital products on Etsy.
+![Python](https://img.shields.io/badge/python-3.10+-blue?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 
-- **`etsy_research.py`** — scrapes Reddit for niche ideas, validates each against live Etsy search data, and outputs a ranked opportunity scorecard
-- **`create_listing.py`** — creates a digital Etsy listing from the command line (title, description, tags, price, file upload, image upload)
+A CLI pipeline for finding, writing, and posting profitable Etsy digital products — from niche discovery to live listing.
+
+```
+etsy_research.py  →  generate_listing.py  →  create_listing.py
+  find niches          write copy w/ AI        post to Etsy
+```
 
 ---
 
-## etsy_research.py
+## Quick start
 
-Runs a 2-phase pipeline:
+```bash
+git clone https://github.com/moooosik/etsy-niche-research.git
+cd etsy-niche-research
+pip install -r requirements.txt
+python -m camoufox fetch
+```
 
-1. **Reddit** — searches r/EtsySellers, r/passive_income, r/sidehustle for niche keyword ideas
-2. **Etsy** — validates each keyword: how many digital listings are on page 1, what are the prices, how many reviews do top listings have
+Then run the full pipeline:
 
-Scores each niche 0–100 based on low competition + proven demand + price.
+```bash
+# Step 1 — find a niche
+python etsy_research.py --skip-reddit --keywords "autism routine chart, trail running plan"
+
+# Step 2 — generate listing copy with Claude AI
+python generate_listing.py --keyword "autism routine chart printable" --data etsy_research.json
+
+# Step 3 — post to Etsy
+python create_listing.py --spec listing.json --file chart.pdf --image cover.jpg --draft
+```
+
+---
+
+## Step 1 — etsy_research.py
+
+Validates Etsy niches against live market data. Scores each keyword 0–100 based on competition, proven demand, and price.
+
+**Phase 1 (optional):** scrapes Reddit (r/EtsySellers, r/passive_income, r/sidehustle) to surface keyword ideas from real seller discussions.
+
+**Phase 2:** opens a fresh headless browser per keyword, searches Etsy filtered to digital listings only, and extracts competitor count, prices, and review counts.
 
 ### Example output
 
 ```
 ETSY NICHE OPPORTUNITY SCORECARD
 Generated: 2026-07-24 12:15
-Keywords: 30
+Keywords:  30
 ===========================================================================
 
 #   KEYWORD                                SCORE  DL#   AVG $   MAX REV
 ---------------------------------------------------------------------------
-1   mother of the bride gift printable     83.0   4     $6.68   406
-2   autism routine chart printable         80.0   5     $3.30   111
-3   trail running training plan printable  78.0   6     $11.17  120
-4   movie themed baby shower printable     75.0   6     $3.50   599
+1   autism routine chart printable         88.0   5     $10.12  148
+2   perimenopause symptom tracker          68.0   6     $8.48   33
+3   mother of the bride gift printable     83.0   4     $6.68   406
+4   trail running training plan printable  78.0   6     $11.17  120
 5   home buying checklist printable        75.0   6     $2.18   580
 ...
 
 TOP 12 NICHES — FULL DETAIL
 ===========================================================================
 
-Keyword     : mother of the bride gift printable
-Score       : 83.0/100
-Competition : 4 digital listings on page 1
-Avg price   : $6.68
-Max reviews : 406  (avg 258.5)
-  Top listings:
-    [ 406 reviews]  $8.25  Mother of the Bride Gift, Custom Photo Collage
-    [ 111 reviews]  $4.99  Mother of Bride Gift Card, Personalized for Mom
-    ...
+Keyword     : autism routine chart printable
+Score       : 88.0/100
+Competition : 5 digital listings on page 1
+Avg price   : $10.12
+Max reviews : 148  (avg 52.3)
+  [148 reviews]  $5.99  ADHD Autism Visual Schedule Cards, Daily Routine
+  [ 73 reviews]  $3.39  Visual Schedule with Activity Icons - 5 Routine S
+  [  9 reviews]  $2.50  Autism Daily Planner | Visual Schedule, Routine
 ```
 
-`DL#` = number of digital-only listings on page 1 (lower = less crowded). `MAX REV` = highest review count among page-1 listings (higher = proven buyers exist).
-
-### Requirements
-
-```
-pip install camoufox requests
-python -m camoufox fetch
-```
+`DL#` = digital-only listing count on page 1 (lower = less crowded). `MAX REV` = highest review count on page 1 (higher = proven buyers exist).
 
 ### Usage
 
 ```bash
-python etsy_research.py
+python etsy_research.py                                       # full run (~25 min)
+python etsy_research.py --skip-reddit                         # Etsy only, faster
+python etsy_research.py --keywords "grief journal, sobriety tracker"
+python etsy_research.py --add-keywords "PCOS symptom log"    # append to seed list
+python etsy_research.py --output results_aug --top-n 20      # custom output + detail depth
 ```
 
-Outputs `etsy_research.txt` (human-readable scorecard) and `etsy_research.json` (full structured data). Takes ~20–30 minutes — Camoufox opens a fresh browser per keyword to avoid bot detection.
+### Scoring formula
 
-To target different niches, edit the `SEED_NICHES` list at the top of the script.
+```
+base = 40
+
+competition (DL# on page 1):
+  ≤ 5  → +30    (underserved niche)
+  ≤ 15 → +20    (low competition)
+  ≤ 25 → +10    (moderate)
+  > 25 → -5     (saturated)
+
+demand (max reviews):
+  > 500 → +15   (strong signal)
+  > 100 → +10
+  > 20  → +5
+  = 0   → -10   (unproven)
+
+revenue (avg price):
+  > $20 → +15
+  > $10 → +8
+  > $5  → +3
+```
 
 ---
 
-## create_listing.py
+## Step 2 — generate_listing.py
 
-Creates a digital Etsy listing from the command line: title, description, tags, price, digital file upload, and optional cover image.
+Calls the Claude API to write a fully optimized Etsy listing: title (≤140 chars), description (400–600 words), and exactly 13 SEO tags. When `etsy_research.json` is present, it feeds in competitor prices and review counts so the copy is positioned against the real market.
 
-### Setup (one time)
+### Setup
 
-1. Create an Etsy app at [etsy.com/developers](https://www.etsy.com/developers/register)
-   - Set redirect URI to `http://localhost:3003/callback`
-2. Create `etsy_config.json` in the same folder:
-   ```json
-   {"client_id": "your_keystring_here"}
-   ```
-3. Authenticate:
-   ```bash
-   python create_listing.py --auth
-   ```
-   Opens your browser, you approve, tokens and shop ID are saved automatically.
+```bash
+export ANTHROPIC_API_KEY=your_key_here
+```
 
 ### Usage
 
 ```bash
-# From a spec file
-python create_listing.py --spec listing.json --draft
+python generate_listing.py --keyword "autism routine chart printable"
+python generate_listing.py --keyword "trail running plan" --data etsy_research.json
+python generate_listing.py --keyword "perimenopause tracker" --output tracker.json
+```
 
-# Or inline
+### Example output
+
+```
+Market data found: 88/100 score, $10.12 avg, 148 max reviews
+
+Generating listing for: autism routine chart printable
+
+✓ Saved → listing.json
+
+  Title : Autism Routine Chart Printable | Visual Daily Schedule for Kids, ADHD Morning Routine Cards
+  Price : $8.99
+  Tags  : autism routine chart, visual schedule kids, adhd daily planner, morning routine printable,
+          autism classroom, special needs chart, pecs visual cards, kids routine printable,
+          autism mom gift, adhd printable, visual schedule autism, routine chart kids, autism tools
+
+Next:
+  python create_listing.py --spec listing.json --file product.pdf --image cover.jpg --draft
+```
+
+---
+
+## Step 3 — create_listing.py
+
+Posts a digital listing directly to Etsy via the API — title, description, tags, price, digital file upload, and optional cover image.
+
+### Setup (one time)
+
+1. Create an app at [etsy.com/developers](https://www.etsy.com/developers/register)
+   - Set redirect URI to `http://localhost:3003/callback`
+2. Create `etsy_config.json`:
+   ```json
+   {"client_id": "your_keystring_here"}
+   ```
+3. Authenticate (opens browser):
+   ```bash
+   python create_listing.py --auth
+   ```
+
+### Usage
+
+```bash
+# From a spec file (output of generate_listing.py)
+python create_listing.py --spec listing.json --file product.pdf --draft
+
+# Or fully inline
 python create_listing.py \
-  --title "8-Week Trail Running Plan | Printable PDF" \
-  --tags "trail running,training plan,running printable,beginner running" \
-  --price 12.99 \
-  --file plan.pdf \
+  --title "Autism Routine Chart Printable | Visual Daily Schedule" \
+  --tags "autism routine chart,visual schedule,adhd planner" \
+  --price 8.99 \
+  --file chart.pdf \
   --image cover.jpg \
   --draft
 ```
 
-`--draft` saves without publishing so you can review on Etsy first. Drop it to go live immediately.
-
-### listing.json format
-
-```json
-{
-  "title":       "8-Week Trail Running Plan | Printable PDF",
-  "description": "A week-by-week beginner trail running plan...",
-  "tags":        ["trail running", "training plan", "running printable"],
-  "price":       12.99,
-  "file":        "plan.pdf",
-  "image":       "cover.jpg",
-  "taxonomy_id": 68887608
-}
-```
-
-`taxonomy_id` defaults to `68887608` (Craft Supplies > Patterns > Printables). See [Etsy taxonomy](https://www.etsy.com/developers/documentation/getting_started/taxonomy) for other categories.
+`--draft` saves without publishing so you can review on Etsy first.
 
 ---
 
 ## Notes
 
-- Etsy occasionally blocks automated searches (body too short warning) — re-running usually clears it
-- `etsy_tokens.json` and `etsy_config.json` are gitignored — never commit them
-- Both scripts require Python 3.10+
+- Etsy occasionally returns short responses (bot protection). The script retries automatically with a backoff delay.
+- `etsy_config.json` and `etsy_tokens.json` are gitignored — never commit them.
+- Requires Python 3.10+
+- `generate_listing.py` requires an [Anthropic API key](https://console.anthropic.com/)
 
 ---
 
