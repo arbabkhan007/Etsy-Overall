@@ -18,6 +18,9 @@ import re
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import anthropic
 
 client = anthropic.Anthropic()
