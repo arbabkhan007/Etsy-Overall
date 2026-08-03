@@ -1,0 +1,8 @@
+etsy_config.json
+etsy_tokens.json
+etsy_research.json
+etsy_research.txt
+__pycache__/
+*.pyc
+*.pyo
+.env
