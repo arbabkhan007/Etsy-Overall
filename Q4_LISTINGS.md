@@ -3,7 +3,7 @@
 Every field validated against Etsy's real limits. Tags are lowercase and ≤20 chars; titles ≤140.
 `PASTE THIS INTO THE LISTING EDITOR` sections are literal — no editing needed.
 
-**Before you paste:** 199 product specifics across 39 listings were inferred from your listing titles and market research, not from your PDFs and spreadsheets. Each block lists exactly what to confirm. Anything you cannot verify, delete the sentence — an over-promised spec is how a 1-star gets written.
+**Before you paste:** 200 product specifics across 39 listings were inferred from your listing titles and market research, not from your PDFs and spreadsheets. Each block lists exactly what to confirm. Anything you cannot verify, delete the sentence — an over-promised spec is how a 1-star gets written.
 
 ---
 
@@ -608,7 +608,7 @@ quarterly review
 
 **Verify against your file before publishing**
 
-- [ ] tab list vs what you build
+- [ ] count the actual tabs, the listing says 13
 - [ ] that January-to-December monthly view exists
 - [ ] whether it links to your other sheets - only say so if the Setup tab really drives them
 - [ ] debt payoff plan tab
@@ -1531,7 +1531,7 @@ small business
 
 **Verify against your file before publishing**
 
-- [ ] tab list against whatever you build
+- [ ] count the actual tabs, the listing says 7
 - [ ] that postmark/deadline logic really exists (build it if you promise it)
 - [ ] US + international postage columns
 - [ ] whether a printable address-label sheet is included - only claim it if you ship it
@@ -2829,6 +2829,7 @@ google sheets
 
 **Verify against your file before publishing**
 
+- [ ] count the actual tabs, the listing says 9
 - [ ] that name-draw automation really works before promising it
 - [ ] price-cap and 'no repeat' rules exist
 - [ ] how many participants the sheet handles

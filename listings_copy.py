@@ -851,7 +851,7 @@ Horns not holding their curl, or the body won't sit up? Send a photo of the roun
 "N7": dict(
  obs="~26 listings, ~900 median / ~19,000 max reviews, but the realised ceiling is only about $4.50. Volume keyword with a low ceiling - a standalone card list can't carry money.",
  why="So don't sell it standalone. This exists to be the second half of the gift tracker at $4.50 more, and to catch the 'when do I mail my cards' search that your $9.99 tracker doesn't cover.",
- verify=["tab list against whatever you build", "that postmark/deadline logic really exists (build it if you promise it)",
+ verify=["count the actual tabs, the listing says 7", "that postmark/deadline logic really exists (build it if you promise it)",
          "US + international postage columns", "whether a printable address-label sheet is included - only claim it if you ship it",
          "Excel and Google Sheets both"],
  desc="""The card list that tells you, in November, that you're already behind.
@@ -888,7 +888,7 @@ Label alignment off by a few millimetres, or your postage dates different from t
 "N8": dict(
  obs="Only ~12 listings in this cluster, ~150 median / ~1,000 max reviews, ceiling around $5. Small but genuinely underserved, and office/Secret Santa buyers are not price-shoppers.",
  why="Thin-market volume play: it's a $5 listing that can appear in every office in December. Build it in a day from pieces you already own.",
- verify=["that name-draw automation really works before promising it", "price-cap and 'no repeat' rules exist",
+ verify=["count the actual tabs, the listing says 9", "that name-draw automation really works before promising it", "price-cap and 'no repeat' rules exist",
          "how many participants the sheet handles", "Excel + Sheets both", "no email/sending integration - don't claim it"],
  desc="""Secret Santa without the group chat, the spreadsheet argument, or the person who drew their own name.
 
@@ -924,7 +924,7 @@ If your group has a rule the sheet doesn't expect — 'the two new hires draw ea
 "N9": dict(
  obs="~20 listings, ~400 median / ~5,000 max reviews, ceiling around $9 and higher for 'reset' framing in January. Q4's tail and January's head — same buyer, two months apart.",
  why="Publish Dec 26. It catches the last week of Q4 traffic (people planning 2027) and then carries the shop through the dead first half of January.",
- verify=["tab list vs what you build", "that January-to-December monthly view exists", "whether it links to your other sheets - only say so if the Setup tab really drives them",
+ verify=["count the actual tabs, the listing says 13", "that January-to-December monthly view exists", "whether it links to your other sheets - only say so if the Setup tab really drives them",
          "debt payoff plan tab", "Excel + Sheets both"],
  desc="""The money plan you'd actually keep, written for the week you're motivated and the month you're not.
 
