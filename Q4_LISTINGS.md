@@ -3,7 +3,7 @@
 Every field validated against Etsy's real limits. Tags are lowercase and ≤20 chars; titles ≤140.
 `PASTE THIS INTO THE LISTING EDITOR` sections are literal — no editing needed.
 
-**Before you paste:** 198 product specifics across 39 listings were inferred from your listing titles and market research, not from your PDFs and spreadsheets. Each block lists exactly what to confirm. Anything you cannot verify, delete the sentence — an over-promised spec is how a 1-star gets written.
+**Before you paste:** 199 product specifics across 39 listings were inferred from your listing titles and market research, not from your PDFs and spreadsheets. Each block lists exactly what to confirm. Anything you cannot verify, delete the sentence — an over-promised spec is how a 1-star gets written.
 
 ---
 
@@ -518,6 +518,7 @@ meal planner
 **Verify against your file before publishing**
 
 - [ ] this is a NEW build - write the PDF first, then re-check every tab name here
+- [ ] count the actual tabs, the listing says 7
 - [ ] recipe scaling really auto-calculates
 - [ ] potluck share-link exists or delete the line
 - [ ] video length

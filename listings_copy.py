@@ -740,7 +740,7 @@ COPY.update({
  "S1": dict(verify=["every tab named - delete any that does not exist", "multi-currency support",
         "countdown-to-Christmas formula actually present", "video length (12 min)", "wrapping and cards tabs exist",
         "that both Excel and Sheets copies are delivered"]),
- "N6": dict(verify=["this is a NEW build - write the PDF first, then re-check every tab name here",
+ "N6": dict(verify=["this is a NEW build - write the PDF first, then re-check every tab name here", "count the actual tabs, the listing says 7",
         "recipe scaling really auto-calculates", "potluck share-link exists or delete the line",
         "video length", "both Excel and Sheets versions"]),
  "S13": dict(verify=["automatic Etsy fee fields vs manual entry", "that Etsy CSV import really works",
