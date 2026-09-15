@@ -196,6 +196,42 @@ python create_listing.py \
 
 ---
 
+## Q4 shop workbench (NovalityStore)
+
+Five files built on top of the pipeline above, aimed at one shop's quarter rather than niche discovery.
+Two checks matter before anything ships: `listing_pack.py --check` (does the field fit Etsy's limits?) and
+`check_promises.py` (does the product actually contain what the copy says?).
+
+```bash
+python3 listing_pack.py        # validate + emit Q4_LISTINGS.md and q4_listings.csv
+python3 novality_seo_model.py  # score 47 keyword targets; prints both portfolio scenarios
+python3 q4_tracker.py          # regenerate q4_weekly_tracker.csv from the model's current answers
+python3 check_promises.py      # fail if a listing promises a number the build spec doesn't deliver
+```
+
+| File | What it is |
+|---|---|
+| `Q4_PLAYBOOK.md` | diagnosis, live market data, method, and the funnel maths behind the plan |
+| `Q4_LISTINGS.md` | paste-ready copy for all 36 live listings + 8 new builds: title, 13 tags, description, price, dated sale window, verify checklist |
+| `Q4_BUILD_BRIEFS.md` | how to actually build the 8 new products: page plans, round scaffolds, tab schemas, formulas, the Secret Santa script |
+| `check_promises.py` | the anti-refund check: every countable claim in the copy must have a spec behind it |
+| `q4_listings.csv` | the same, in spreadsheet form |
+| `novality_seo_model.py` | scoring engine: demand, competition, CTR headroom, price ceiling, unit math |
+| `novality_q4_scores.csv` | 47 scored keyword targets with a verdict and a single "next move" each |
+| `q4_weekly_tracker.csv` | 13-week plan: one job per week, targets vs. actuals |
+
+`listing_pack.py` is also useful standalone: it enforces Etsy's real field limits (140-char titles,
+13 tags of ≤20 characters, no singular/plural collisions, discount-band checks) before you paste copy
+into the listing editor. Point `LISTINGS` at your own data (long-form copy lives in `listings_copy.py`) and it will tell you what
+you got wrong — which is exactly how 24 over-length tags and 3 too-shallow discount badges got caught in
+the first draft here. The validator never once let a broken field through to the output file.
+
+Scoring is deliberately built from **observable** quantities only (page-1 listing counts, review counts,
+realized prices). Etsy does not publish search volume or CTR, so anything claiming either is a model.
+Replace the assumptions with your own Shop Stats numbers and the model gets honest about *your* shop.
+
+---
+
 ## Support
 
 If this saved you time, [GitHub Sponsors](https://github.com/sponsors/moooosik) is appreciated but never expected.
