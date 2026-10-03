@@ -92,7 +92,7 @@ def main():
         print("no chart markdown found"); return 1
     problems, checked = [], 0
     for stem, want in md.items():
-        pdf = f"dist/patterns/{stem}.pdf"
+        pdf = f"patterns/pdf/{stem}.pdf"
         if not os.path.exists(pdf):
             problems.append(f"{stem}: no exported PDF (run make_pdfs.py)")
             continue
@@ -113,7 +113,7 @@ def main():
                                 f"(expected {len(g)}x{len(g[0])} rows{det})")
     for f in sorted(glob.glob("patterns/F*.md")) + ["patterns/START-HERE.md"]:
         stem = os.path.splitext(os.path.basename(f))[0]
-        p = f"dist/patterns/{stem}.pdf"
+        p = f"patterns/pdf/{stem}.pdf"
         if not os.path.exists(p):
             problems.append(f"{stem}: missing PDF")
         elif os.path.getsize(p) < 6000:

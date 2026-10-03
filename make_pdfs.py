@@ -13,8 +13,9 @@ someone on a machine without it. Same blocks, same order, no markup left behind.
 Fonts are the brand's DejaVu family when present, else the core PDF fonts, so the PDF never fails
 because a ttf is missing on the box that builds it.
 """
-import glob, html as H, os, re, sys, zipfile
+import glob, html as H, os, re, shutil, sys, zipfile
 
+PDFDIR = "patterns/pdf"        # the delivered artefacts are tracked; dist/ is scratch
 CREAM, INK, FOREST, TERRA, MUTE, LINE = "#F5EFE6", "#262420", "#1F4634", "#C2643F", "#7A7265", "#D7CBB8"
 FD = "/usr/share/fonts/truetype/dejavu"
 META_KEYS = ("Product", "Sell as", "TEST_STATUS", "BABY_SAFE", "Pricing")
@@ -367,6 +368,7 @@ def main():
     files = sys.argv[1:] or sorted(glob.glob("patterns/F*.md") + glob.glob("patterns/START-HERE.md")
                                    + glob.glob("patterns/charts/*.md"))
     os.makedirs("dist/patterns", exist_ok=True)
+    os.makedirs(PDFDIR, exist_ok=True)
     made = []
     for f in files:
         md = open(f).read()
@@ -379,9 +381,11 @@ def main():
                 f" &middot; patterns untested until stitched</footer></body></html>")
         hp = f"dist/patterns/{name}.html"
         open(hp, "w").write(page)
-        pp = pdf_of(blocks, f"dist/patterns/{name}.pdf",
+        pp = pdf_of(blocks, f"{PDFDIR}/{name}.pdf",          # canonical, tracked
                     "NovalityStore  \u00b7  personal use only  \u00b7  novalitystore.etsy.com  \u00b7  "
                     "untested draft - report any round that does not work")
+        if pp:
+            shutil.copy(pp, f"dist/patterns/{name}.pdf")     # scratch copy, so the preview serves both
         made.append((name, title, os.path.getsize(hp), os.path.getsize(pp) if pp else 0))
         print(f"  {name:<18} html {made[-1][2]//1024:>3} KB" + (f"  pdf {made[-1][3]//1024:>3} KB" if pp else "  pdf (reportlab missing)"))
     head = ("<!doctype html><html><head><meta charset=utf-8><title>Novality pattern files</title><style>"
@@ -402,8 +406,8 @@ def main():
     with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         z.writestr("HOW-TO-UPLOAD.txt", HOWTO)
         for n, t, hs, ps in made:
-            if ps:
-                z.write(f"dist/patterns/{n}.pdf", f"pdfs/{n}.pdf")
+            if os.path.exists(f"{PDFDIR}/{n}.pdf"):
+                z.write(f"{PDFDIR}/{n}.pdf", f"pdfs/{n}.pdf")
             z.write(f"dist/patterns/{n}.html", f"print-ready-html/{n}.html")
         for f in sorted(glob.glob("patterns/*.md")) + sorted(glob.glob("patterns/charts/*.md")) + \
                  ["make_pdfs.py", "make_charts.py", "verify_patterns.py", "verify_pdfs.py"]:
