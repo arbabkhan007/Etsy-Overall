@@ -2,3 +2,8 @@ anthropic
 camoufox
 python-dotenv
 requests
+
+# optional: PDF export + the geometry audit (make_pdfs.py / verify_pdfs.py degrade to
+# print-ready HTML without them, so the patterns still build on a bare machine)
+reportlab>=4.0
+pymupdf>=1.24
