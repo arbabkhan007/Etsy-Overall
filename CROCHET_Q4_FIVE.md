@@ -349,3 +349,38 @@ Five listings in 14 days, each with a video, each in the ladder. That also fixes
 your Stats showed unchanged since September: the 12-day publishing silence, and views-per-visit
 at 1.47 - because a single/set/everything ladder is the only structure that makes a shopper open
 a second page.
+
+---
+
+## Build status — Oct 3 2026
+
+The four pattern files are written and machine-checked. This is the state of each, and what is still
+on you before a listing goes live.
+
+| file | contents | verified | still needed |
+|---|---|---|---|
+| `patterns/F1-nativity-set.md` | shared base L01 + 19 figures | round arithmetic, 20 blocks | stitch Mary, Joseph, the angel; block the donkey |
+| `patterns/F2-baby-loveys.md` | blanket P01 + head P02 + 4 loveys, 3 sizes | round arithmetic, 4 blocks | crochet one 30 cm lovey and wash it once |
+| `patterns/F3-advent-garland.md` | 24 motifs M01-M24 | round arithmetic, 24 blocks | three motifs and the number chart on a real hook |
+| `patterns/F4-stockings.md` | stocking P01 + 5 fronts, 2 sizes | round arithmetic, 6 blocks | one stocking, one 5-letter name in the chart |
+| `patterns/START-HERE.md` | buyer-facing pack cover | — | drop it inside every zip |
+
+**What "verified" means here:** `python3 verify_patterns.py` recomputes every round and row from the
+line before it — consumes, produces, the stitch chain across rounds, the multiplier arithmetic, the
+declared motif/figure counts against the blocks actually present, the required front matter, and it
+refuses to pass a pattern that claims testers or hand-edited charts. It caught 26 bad rounds in the
+nativity file and three in the stockings file, including a real pattern bug (a 6-to-12 increase
+written as `(1 sc, inc) x6`, which yields 18). It also caught my own editing note leaking into a
+pattern line, which is exactly the failure mode a checker exists for.
+
+**What it does not mean:** that the fabric looks right, that the gauge table matches your yarn, that
+a camel reads as a camel, or that a buyer will not email you about the reindeer antlers. Those are
+hand-and-eye problems and only a hook solves them. The files say `TEST_STATUS: untested` and the
+listing copy must keep saying that too — do not add "tested by", "tech edited" or "proofed by" to
+anything, because you have no testers yet and a pattern review is the one review that ruins a
+crochet shop.
+
+**To export:** `python3 make_charts.py && python3 make_pdfs.py` writes print-ready HTML into
+`dist/patterns/`. Open one, Ctrl/Cmd-P, Save as PDF, Letter or A4, background graphics ticked. That
+is your Etsy file. The chart PDFs are separate uploads on purpose — `AZ-name-chart` is the reason
+someone pays $11.99 instead of $1.62.

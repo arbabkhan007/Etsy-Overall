@@ -236,6 +236,12 @@ Replace the assumptions with your own Shop Stats numbers and the model gets hone
 
 If this saved you time, [GitHub Sponsors](https://github.com/sponsors/moooosik) is appreciated but never expected.
 
+`patterns/` holds the pattern files those briefs call for - F1 nativity (19 figures), F2 baby loveys (4,
+3 sizes), F3 advent garland (24 motifs), F4 stockings (5 fronts + an A-Z name chart), plus
+`START-HERE.md` for the bundle. `python3 verify_patterns.py` recomputes every round from the
+line before it and fails the build on any drift; `make_charts.py` then `make_pdfs.py` write
+print-ready files into `dist/patterns/`.
+
 `CROCHET_Q4_FIVE.md` is the five highest-price-tolerance crochet builds for Q4, each with live
 Etsy competition data, and `verify_five.py` machine-checks its tag lengths, title lengths and
 every discount line.
