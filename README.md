@@ -236,6 +236,10 @@ Replace the assumptions with your own Shop Stats numbers and the model gets hone
 
 If this saved you time, [GitHub Sponsors](https://github.com/sponsors/moooosik) is appreciated but never expected.
 
+`CROCHET_Q4_FIVE.md` is the five highest-price-tolerance crochet builds for Q4, each with live
+Etsy competition data, and `verify_five.py` machine-checks its tag lengths, title lengths and
+every discount line.
+
 `make_brand_assets.py` draws the shop's brand kit (banner, icon, logos, section headers,
 listing templates) at Etsy's real pixel specs, and `BRAND_KIT.md` explains the rules.
 Deterministic on purpose: the assets have to survive being 160px in a search result.
