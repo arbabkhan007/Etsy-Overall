@@ -35,7 +35,7 @@ only contain something that exists in the file the buyer receives.**
 | # | listing | id | realised | net/sale | why the image matters | tile |
 |---|---|---|---|---|---|---|
 | 1 | Christmas Gift Tracker Spreadsheet | 4573955047 | $11.99 | $10.40 | only listing where price, Q4 demand and the $10 ad floor overlap | A |
-| 2 | Crochet Craft Fair Tracker Spreadsheet | 4578849733 | $9.74 | $8.36 | your two audiences in one file; nobody else has this image | A |
+| 2 | Crochet Craft Fair Tracker Spreadsheet | 4578849733 | $9.74 | $8.36 | **done** - tiles built; live gallery also needs the catering image removed | A |
 | 3 | Secret Santa Spreadsheet | 4578846463 | $8.99 | $7.69 | pure Q4, buyer decides in one glance, currently a plain grid shot | A |
 | 4 | Wedding Planner Spreadsheet, 52 Tabs | 4534483099 | $11.99 | $10.40 | Etsy is cropping this thumbnail off-centre; the "52" is the whole pitch | A |
 | 5 | Personal Finance Spreadsheet Bundle | 4534488947 | $10.49 | $9.04 | also cropped; a bundle must look like a bundle | A |
@@ -68,3 +68,35 @@ For each row: you send the 13 tags you want on that listing (and for Lane A, one
 real workbook), I build the tile set - 2700x2025 main, plus the feature tile and the what-you-get
 tile - as PNGs in `dist/tiles/<id>/`, with the tag words used as the on-image chips where they are
 true claims. Nothing goes into the image that is not in the file.
+
+## Built so far
+
+| listing | tiles | how |
+|---|---|---|
+| 4577821049 advent garland (F3) | `tiles/4577821049/01-main.png`, `02-contents.png`, `03-honest.png` | real PDF pages + the real 1-24 chart sheet, rasterised from `patterns/pdf/` |
+| 4578849733 craft fair tracker | `tiles/4578849733/01-main.png`, `02-editions.png` | tab strip drawn from the tab names in his own live images - deliberately **no** cells filled with invented figures |
+
+## Two defects found in the live image sets (these outrank any new tile)
+
+1. **Wrong product inside the crochet listing.** `4578849733` image #10 is described by Etsy as
+   "a digital monthly summary dashboard for a **catering business** manager" - that is the Catering
+   Spreadsheet's screenshot sitting in the Craft Fair Tracker's gallery. Delete it or swap it for the
+   crochet dashboard. A buyer who notices the name mismatch has exactly the reason Kim wrote about.
+2. **Palette drift.** Several tiles use dark purple headers with red bars; the brand kit is forest
+   `#1F4634` / terracotta `#C2643F` on cream `#F5EFE6`. Purple tiles + cream tiles in one gallery
+   reads as two sellers. The new tiles here use the brand palette for that reason.
+
+## Claims that still need proof against the actual files
+
+Nothing in this list is on the new tiles, but all of it is on his existing ones. If a number is
+wrong, the tile has to change before the review does.
+
+| listing | claim on a live image | how to check |
+|---|---|---|
+| 4573955047 gift tracker | 2,500+ formulas | open the .xlsx, count `=` cells; if it is 900, say "900+" |
+| 4573955047 gift tracker | 56 dropdown menus, 6 charts, 46+ colour rules, 13 tabs, 18 occasions | same file, count each |
+| 4578849733 craft fair | Premium 14 tabs / Basic 8 tabs, 4 files, 12-page guide | file count and tab names |
+| 4578849733 craft fair | price = true cost / (1 - margin) | confirm the pricing tab actually divides by (1-margin) |
+
+Send the .xlsx and `python3` will count all of it in one pass - formulas, dropdowns, conditional
+formats, charts, tabs - and print the exact strings to put back on the tiles.

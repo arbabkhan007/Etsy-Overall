@@ -25,6 +25,26 @@ FD = "/usr/share/fonts/truetype/dejavu"
 # ---- one entry per listing in TOP15_IMAGE_QUEUE.md. `pages` are 1-indexed PDF pages of the actual
 # ---- product file; `chips` must each be true of that file.
 SPEC = {
+    "4578849733": {
+        "pdf": None,
+        "tiles": [
+            {"file": "01-main.png", "kicker": "EXCEL + GOOGLE SHEETS  \u00b7  INSTANT DOWNLOAD",
+             "headline": "Which Fairs\nActually Paid",
+             "sub": "Log sales per table, charge the booth fee against the day, and see the margin on every "
+                    "pattern you stocked. Premium edition has 14 linked tabs; Basic has 8.",
+             "tabs": ["Dashboard", "Sales Log", "Craft Fairs", "Event Profit", "+ 10 more"],
+             "caption": "the tabs, as they ship - 14 in Premium, 8 in Basic",
+             "chips": ["margin per product", "booth cost vs net per fair", "yarn cost calculator", "no formulas to write"]},
+            {"file": "02-editions.png", "kicker": "TWO EDITIONS, FOUR FILES",
+             "headline": "Premium 14 tabs\nBasic 8 tabs",
+             "list": ["Two colour themes in the Premium edition, plus the Basic edition",
+                      "A filled-in example so you can see a finished season, not an empty grid",
+                      "A 12-page setup and usage guide",
+                      "Pricing page uses price = true cost / (1 - margin), yarn, packaging, labour, overhead",
+                      "Works in Excel 2016+, Microsoft 365, Mac Excel and Google Sheets"],
+             "chips": ["4 files", "no macros", "editable product lists"]},
+        ],
+    },
     "4577821049": {
         "pdf": "patterns/pdf/F3-advent-garland.pdf",
         "tiles": [
@@ -102,6 +122,42 @@ def card(img, hgt, shadow=26):
     return out
 
 
+def tabstrip(names, w=1160, h=760):
+    """A spreadsheet window with nothing invented inside it: real tab names on folder tabs, an empty
+    grid, no fake numbers and no fake revenue. A tile can describe the file honestly; the moment it
+    shows made-up figures it becomes the thing Kim's review was about."""
+    img = Image.new("RGB", (w, h), "#FFFFFF")
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle((0, 0, w - 1, h - 1), radius=14, fill="#FFFFFF", outline=LINE, width=4)
+    d.rectangle((2, 2, w - 3, 66), fill=FOREST)
+    for i, col in enumerate([TERRA, "#E4DBC9", "#FFFFFF"]):
+        d.ellipse((28 + i * 34, 24, 50 + i * 34, 46), fill=col)
+    d.text((140, 20), "Novality  -  craft fair tracker.xlsx", font=font("DejaVuSans-Bold.ttf", 26), fill=CREAM)
+    cw, ch = 92, 54
+    x0, y0, rows = 40, 118, 6
+    for r in range(rows + 1):
+        d.line((x0, y0 + r * ch, w - 40, y0 + r * ch), fill="#EAE2D2", width=2)
+    for c in range(int((w - 80) / cw) + 1):
+        d.line((x0 + c * cw, y0, x0 + c * cw, y0 + rows * ch), fill="#EAE2D2", width=2)
+    d.rectangle((x0, y0, x0 + cw, y0 + ch), outline=TERRA, width=4)
+    for i, r in enumerate(range(rows)):
+        d.text((16, y0 + r * ch + 16), str(r + 1), font=font("DejaVuSans.ttf", 22), fill=MUTE)
+    col_letters = "ABCDEFGH"
+    for i, c in enumerate(range(int((w - 80) / cw))):
+        d.text((x0 + i * cw + 34, y0 - 34), col_letters[c % 8], font=font("DejaVuSans.ttf", 22), fill=MUTE)
+    tw = (w - 56) / max(1, len(names))
+    ty = h - 64
+    for i, n in enumerate(names):
+        x = 30 + i * tw
+        col = TERRA if i == 0 else "#EFE7D8"
+        txt = CREAM if i == 0 else FOREST
+        d.rounded_rectangle((x, ty, x + tw - 8, ty + 44), radius=8, fill=col)
+        f = font("DejaVuSans-Bold.ttf", 21 if tw > 150 else 18)
+        lbl = n if d.textlength(n, font=f) <= tw - 26 else n[:max(4, int((tw - 30) / (11 if tw > 150 else 9)))] + "\u2026"
+        d.text((x + 14, ty + 12), lbl, font=f, fill=txt)
+    return img
+
+
 def tile(spec, outpath):
     """Two-column layout with measured wrapping. The left column is text, the right column is the
     product. Nothing is allowed to be drawn outside its column, which is the whole reason the first
@@ -113,17 +169,17 @@ def tile(spec, outpath):
     d.rectangle((44, 44, W - 44, 60), fill=FOREST)
     d.rectangle((44, H - 60, W - 44, H - 44), fill=TERRA)
 
-    art = bool(spec.get("pages") or spec.get("extra"))
+    art = bool(spec.get("pages") or spec.get("extra") or spec.get("tabs"))
     x = 150
     colw = 1180 if art else 2400
     top, bottom = 175, H - 215
 
-    y = top
+    y = top + (300 if not art else 40)
     if spec.get("kicker"):
         d.text((x, y), spec["kicker"], font=font("DejaVuSans-Bold.ttf", 34), fill=TERRA)
         y += 74
 
-    hs = 118 if art else 148
+    hs = 118 if art else 176
     if spec.get("headline"):
         hf = font("DejaVuSans-Bold.ttf", hs)
         for ln in spec["headline"].split("\n"):
@@ -134,7 +190,7 @@ def tile(spec, outpath):
         y += 52
 
     if spec.get("sub"):
-        sf = font("DejaVuSans.ttf", 40 if art else 44)
+        sf = font("DejaVuSans.ttf", 40 if art else 52)
         for ln in wrap(d, spec["sub"].replace("\n", " "), sf, colw - 20):
             d.text((x, y), ln, font=sf, fill=INK); y += 60
         y += 22
@@ -148,16 +204,16 @@ def tile(spec, outpath):
         y += 22
 
     if spec.get("list"):
-        lf = font("DejaVuSans.ttf", 43)
+        lf = font("DejaVuSans.ttf", 44 if art else 58)
         for item in spec["list"]:
             lines = wrap(d, item, lf, colw - 80)
             for n, ln in enumerate(lines):
                 if n == 0:
                     d.ellipse((x + 6, y + 16, x + 22, y + 32), fill=TERRA)
-                d.text((x + 44 if n == 0 else x + 52, y), ln, font=lf, fill=INK)
-                y += 60
-            y += 12
-        y += 14
+                d.text((x + 44 if n == 0 else x + 56, y), ln, font=lf, fill=INK)
+                y += int(lf.size * 1.36)
+            y += 16
+        y += 18
 
     if spec.get("chips"):
         cf = font("DejaVuSans-Bold.ttf", 36)
@@ -172,6 +228,16 @@ def tile(spec, outpath):
             cx += w + 24
 
     ax, aw = 150 + colw + 70, W - 150 - (150 + colw + 70)
+    if spec.get("tabs"):
+        st = tabstrip(spec["tabs"], w=min(aw, 1180), h=720)
+        box = Image.new("RGB", (st.width + 52, st.height + 52), CREAM)
+        box.paste(st, (26, 26))
+        tx = ax + (aw - box.width) // 2
+        ty = (H - box.height) // 2 + 20
+        img.paste(box, (tx, ty))
+        d = ImageDraw.Draw(img)
+        d.text((tx, ty + box.height + 40), spec.get("caption", "the tabs, as they ship"),
+               font=font("DejaVuSans.ttf", 32), fill=MUTE)
     if art:
         caption = spec.get("caption", "pages from the file you download")
         ah = H - top - 260 if spec.get("pages") else H - 260
