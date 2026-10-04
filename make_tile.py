@@ -25,6 +25,17 @@ FD = "/usr/share/fonts/truetype/dejavu"
 # ---- one entry per listing in TOP15_IMAGE_QUEUE.md. `pages` are 1-indexed PDF pages of the actual
 # ---- product file; `chips` must each be true of that file.
 SPEC = {
+    "4578846463": {
+        "pdf": None,
+        "tiles": [
+            {"file": "01-rules.png", "kicker": "SECRET SANTA + WHITE ELEPHANT  \u00b7  EXCEL + SHEETS",
+             "headline": "Nobody Draws\nthe Wrong Name",
+             "sub": "Couples, housemates, the boss, the person who fell out - block any pair before the "
+                    "draw, and it re-shuffles itself when someone drops out. 12 linked tabs, zero setup.",
+             "diagram": True,
+             "chips": ["block any pair", "auto re-draw", "printable santa cards", "no macros"]},
+        ],
+    },
     "4578849733": {
         "pdf": None,
         "tiles": [
@@ -158,6 +169,47 @@ def tabstrip(names, w=1160, h=760):
     return img
 
 
+def rules_diagram(w=1180, h=790):
+    """How the exclusion rule works, drawn - not a screenshot and not pretending to be one. Sample
+    names are deliberately 'GUEST A/B' style so nobody can mistake this for their own data, which is
+    the difference between an explanatory graphic and the misleading-picture complaint."""
+    img = Image.new("RGB", (w, h), "#FFFFFF")
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle((0, 0, w - 1, h - 1), radius=16, fill="#FFFFFF", outline=LINE, width=4)
+    d.rectangle((2, 2, w - 3, 74), fill=FOREST)
+    d.text((34, 24), "the draw, before it happens", font=font("DejaVuSans-Bold.ttf", 27), fill=CREAM)
+    rows = [("A couple never draws each other", ["GUEST A", "GUEST B"], "barred"),
+            ("Set any pair you like, by hand", ["HOST", "BOSS"], "barred"),
+            ("A name drops out - the draw fixes itself", ["CANCELLED", "RE-DRAW"], "redraw")]
+    f = font("DejaVuSans-Bold.ttf", 30)
+    y = 150
+    for label, pair, mode in rows:
+        d.text((40, y - 56), label, font=font("DejaVuSans.ttf", 31), fill=INK)
+        x = 60
+        for i, nm in enumerate(pair):
+            bw = 300
+            col = "#EFE7D8"
+            d.rounded_rectangle((x, y, x + bw, y + 88), radius=14, fill=col, outline=FOREST, width=3)
+            d.text((x + (bw - d.textlength(nm, font=f)) / 2, y + 27), nm, font=f, fill=FOREST)
+            if i == 0:
+                if mode == "barred":
+                    cx = x + bw + 44
+                    d.ellipse((cx - 30, y + 14, cx + 30, y + 74), outline=TERRA, width=7)
+                    d.line((cx - 19, y + 63, cx + 19, y + 25), fill=TERRA, width=7)
+                else:
+                    cx = x + bw + 44
+                    d.line((cx - 34, y + 44, cx + 22, y + 44), fill=FOREST, width=7)
+                    d.line((cx + 4, y + 26, cx + 24, y + 44), fill=FOREST, width=7)
+                    d.line((cx + 4, y + 62, cx + 24, y + 44), fill=FOREST, width=7)
+                x = cx + 44
+            else:
+                x += bw
+        y += 205
+    d.text((40, h - 62), "illustration of the rule, not a screen from the file",
+           font=font("DejaVuSans.ttf", 26), fill=MUTE)
+    return img
+
+
 def tile(spec, outpath):
     """Two-column layout with measured wrapping. The left column is text, the right column is the
     product. Nothing is allowed to be drawn outside its column, which is the whole reason the first
@@ -169,7 +221,7 @@ def tile(spec, outpath):
     d.rectangle((44, 44, W - 44, 60), fill=FOREST)
     d.rectangle((44, H - 60, W - 44, H - 44), fill=TERRA)
 
-    art = bool(spec.get("pages") or spec.get("extra") or spec.get("tabs"))
+    art = bool(spec.get("pages") or spec.get("extra") or spec.get("tabs") or spec.get("diagram"))
     x = 150
     colw = 1180 if art else 2400
     top, bottom = 175, H - 215
@@ -228,6 +280,13 @@ def tile(spec, outpath):
             cx += w + 24
 
     ax, aw = 150 + colw + 70, W - 150 - (150 + colw + 70)
+    if spec.get("diagram"):
+        st = rules_diagram(w=min(aw, 1180), h=790)
+        box = Image.new("RGB", (st.width + 52, st.height + 52), CREAM)
+        box.paste(st, (26, 26))
+        tx, ty = ax + (aw - box.width) // 2, (H - box.height) // 2 + 20
+        img.paste(box, (tx, ty))
+        d = ImageDraw.Draw(img)
     if spec.get("tabs"):
         st = tabstrip(spec["tabs"], w=min(aw, 1180), h=720)
         box = Image.new("RGB", (st.width + 52, st.height + 52), CREAM)

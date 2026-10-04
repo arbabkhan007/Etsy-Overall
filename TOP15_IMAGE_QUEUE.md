@@ -74,6 +74,7 @@ true claims. Nothing goes into the image that is not in the file.
 | listing | tiles | how |
 |---|---|---|
 | 4577821049 advent garland (F3) | `tiles/4577821049/01-main.png`, `02-contents.png`, `03-honest.png` | real PDF pages + the real 1-24 chart sheet, rasterised from `patterns/pdf/` |
+| 4578846463 secret santa | `tiles/4578846463/01-rules.png` | rules diagram - labelled as an illustration, because it is one |
 | 4578849733 craft fair tracker | `tiles/4578849733/01-main.png`, `02-editions.png` | tab strip drawn from the tab names in his own live images - deliberately **no** cells filled with invented figures |
 
 ## Two defects found in the live image sets (these outrank any new tile)
@@ -97,6 +98,9 @@ wrong, the tile has to change before the review does.
 | 4573955047 gift tracker | 56 dropdown menus, 6 charts, 46+ colour rules, 13 tabs, 18 occasions | same file, count each |
 | 4578849733 craft fair | Premium 14 tabs / Basic 8 tabs, 4 files, 12-page guide | file count and tab names |
 | 4578849733 craft fair | price = true cost / (1 - margin) | confirm the pricing tab actually divides by (1-margin) |
+| 4578846463 secret santa | 12 linked tabs, "zero set-up" | count the tabs in the file |
+| 4578846463 secret santa | 4 files: PREMIUM Noel, PREMIUM Arctic, PREMIUM EXAMPLE, User Guide (+ a Basic edition?) | count what actually downloads - a fifth file or a missing Basic edition is a message, not a review |
+| 4578846463 secret santa | "no macros, works offline" | if the draw is a formula shuffle rather than a macro, say "no add-ins" instead - clearer and still true |
 
 Send the .xlsx and `python3` will count all of it in one pass - formulas, dropdowns, conditional
 formats, charts, tabs - and print the exact strings to put back on the tiles.
