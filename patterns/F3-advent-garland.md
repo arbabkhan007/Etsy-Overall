@@ -444,6 +444,43 @@ of gold yarn, 3 cm, pulled through the near rim and trimmed ragged). Sew the bab
 put M03 above the trough on a 6 cm wire. This motif is the doorway into the nativity set - put the
 link in the gift note for day 24.
 
+## Gift notes - print, cut, tuck inside
+
+The slip is what turns a garland into a calendar: each motif hides a numbered note, and the note is
+the actual gift on most days. Print this page single-sided at 100%, cut on the lines, fold once. The
+prompt is printed on the front and the inside stays blank for you.
+
+| day | prompt on the slip |
+|---|---|
+| Day 1 | Wake someone you forgot - the neighbour who took in your parcels |
+| Day 2 | Buy the thing they keep re-marking online - before it sells out |
+| Day 3 | Say thanks for one specific thing - from this year, out loud |
+| Day 4 | Give an experience, not an object - two tickets, no wrapping needed |
+| Day 5 | Re-gift joyfully - the candle you love but own three of |
+| Day 6 | Ask what they already have - and buy the upgrade, not the duplicate |
+| Day 7 | Send something by post - to the friend who lives far away |
+| Day 8 | Make the day easier - a paid-for breakfast on the 25th |
+| Day 9 | Give the luxury size - of one thing they only buy in minis |
+| Day 10 | Fund a small obsession - they would never buy themselves |
+| Day 11 | Write the note first - then choose the gift to match it |
+| Day 12 | Two of the same thing - one for them, one for you, on purpose |
+| Day 13 | Skip the toy - give the storage for the toys instead |
+| Day 14 | Bring back a tradition - the board game everyone outgrew |
+| Day 15 | Buy time - a cleaning session, a meal kit, a lift to the airport |
+| Day 16 | Give the framed version - of a photo that has lived on a phone |
+| Day 17 | Something that keeps - a tool, not a decoration |
+| Day 18 | Feed them - the good tin of biscuits, the one you ration |
+| Day 19 | Wrap it in a towel - they will use, and knot it, not tape it |
+| Day 20 | Give the next level - of the hobby they only dabble in |
+| Day 21 | Book the shop - haircut, bike service, the thing they delay |
+| Day 22 | One gift, five days - unwrap it in stages, one small part a day |
+| Day 23 | Hand down your own copy - of the book that changed your twenties |
+| Day 24 | The last one is you - something for you, chosen while you were choosing for everyone |
+
+Two rules that make these land. Keep every prompt under a line, because a slip with three sentences
+reads as homework. And write the gift on Day 24 yourself, in ink, before December starts, because
+that is the one everybody forgets while they are wrapping.
+
 ## Numbers chart
 
 Two styles, both in `AZ-name-chart.md` alongside the letters so the whole garland is consistent:
