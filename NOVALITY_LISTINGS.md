@@ -1,93 +1,36 @@
-# NovalityStore - Q4 master file
+# NovalityStore - listing copy, frozen to ~10 Feb 2027
 
-Generated `bd5f57a` on 6 Oct 2026 by `python3 make_master.py`. Everything below is read out of the files in this repo, so re-run the script instead of editing this page by hand.
+Generated `af371c0` on 6 Oct 2026 by `python3 make_docs.py`. **No money or traffic figures live in this file** - they are in `NOVALITY_METRICS.md`. Paste from here, do not retype: 102 tags sit at 19-20 characters and a mistyped tag is a dead slot you cannot fix until February.
 
-**In one line:** titles and tags are frozen for 4 months (the set is below), and the $1,000 has to be made on price and images, because discovery alone puts you near $350 in this window.
+| § | what |
+|---|---|
+| 1 | The five rules the set was built under |
+| 2 | The frozen set: 36 titles + 468 tags, with what to verify first |
+| 3 | Compact paste table |
+| 4 | Every change made to the document you sent |
+| 5 | What was wrong with that document |
+| 6 | Image work list and the tile/file match rule |
+| 7 | Tiles on disk |
+| 8 | Freeze protocol |
+| 9 | Rules cheat-sheet |
 
-## Index
+## 1. The rules this set was built under
 
-| § | what | file it came from |
-|---|---|---|
-| 1 | The shop, measured | your Stats, read 4 Oct |
-| 2 | The $1,000 math for the freeze window | this file |
-| 3 | The frozen set: 36 titles + 468 tags | `seo_final.json` |
-| 4 | Compact paste table | same |
-| 5 | Every change made to your document, with the reason | `audit/proposed_seo.md` diffed against the set |
-| 6 | What was wrong with the document you sent | `audit/TAG_DOC_REVIEW.md` |
-| 7 | Image queue: 15 listings, what is built | `TOP15_IMAGE_QUEUE.md` |
-| 8 | Tiles on disk, with raw links | `tiles/` |
-| 9 | Patterns and the honest test status | `patterns/`, `CROCHET_Q4_FIVE.md` |
-| 10 | Rules cheat-sheet (the teaching, condensed) | the whole session |
-| 11 | What is still owed by you | this file |
+1. **First phrase = the exact query.** Etsy weights the leading words hardest and mobile cuts the title near 40 characters, so the product type has to survive the cut.
+2. **One phrase, one listing.** Etsy shows whichever of your own listings already has the sales, so a tag used twice is a slot spent losing to yourself. There is not one shared phrase in this set.
+3. **Tags carry intent, titles carry compatibility.** `Excel and Sheets` belongs in a title, where it also earns the click. `google sheets` left the tag boxes, where it only rented browse traffic.
+4. **A freeze is a season bet.** Seasonal crochet keeps all 13 season tags - its next window is October 2027 and it needs full strength for the eight weeks that matter. Files that peak after New Year spend tail slots on January intent so December does not eat the set.
+5. **Unprovable numbers stay out of the text.** A wrong claim normally costs a review; in a freeze it costs four months, because you have decided not to touch it.
 
----
+## 2. The frozen set
 
-## 1. The shop, measured
+Validated by script: 36 listings, 13 tags each, every tag <= 20 characters, no tag contained inside another, and no phrase used by two listings. No trademark used as a tag headline except four on the Etsy seller tool. No year stamps outside the goat listing, where the year is the product.
 
-| metric | value | read |
-|---|---|---|
-| lifetime views | 1,569 | Stats, 4 Oct |
-| lifetime visits | 1,065 | Stats |
-| orders | 11 | Stats |
-| revenue | $54.54 | Stats |
-| ad spend | $21.91 | Stats |
-| **net lifetime** | **$22.50** | revenue x 0.905 - fees, less ads |
-| average order value | $4.96 | $54.54 / 11 |
-| conversion, lifetime | **1.03%** of visits became orders | 11 / 1,065 |
-| conversion, September | **2.86%** | 4 orders / 140 visits - documented in `CROCHET_Q4_FIVE.md:246` |
-| sales rate | ~0.8 / week | lifetime, since open |
-| reviews | 3.7 stars, 3 reviews | one 1-star governs everything below |
-| listings | 36, every one on a permanent 25% off | the shop-wide discount is itself a problem |
+**17 listings carry a numeric claim in the title.** Count it in the delivered file before you paste - each is flagged under its listing.
 
-The governing review (Kim, 1 star): *"the instructions for the arms and legs would have looked NOTHING like the picture... Use a REAL photo."* Every tile in this repo is built so that sentence cannot be written about a Novality picture again.
+### 2.1 Christmas Tree Skirt Pattern  ·  `listing/4573853611`
 
-## 2. The $1,000, in the freeze window
-
-6 Oct 2026 to 31 Jan 2027 is **17 weeks**, so $1,000 = **$58.82 gross per week**. Etsy's cut plus fixed fees mean `net = 0.905 x price - $0.45`.
-
-| average order value | sales/wk needed | total sales | views/wk needed at 2.86% CVR | net per sale |
-|---|---|---|---|---|
-| $4.96 | 11.9 | 202 | 415 | $4.04 |
-| $8.00 | 7.4 | 125 | 257 | $6.79 |
-| $12.00 | 4.9 | 83 | 171 | $10.41 |
-| $14.00 | 4.2 | 71 | 147 | $12.22 |
-| $19.00 | 3.1 | 53 | 108 | $16.75 |
-| $24.00 | 2.5 | 42 | 86 | $21.27 |
-
-The views column uses your **September** rate of 2.86%. If the lifetime rate (1.03%) is the honest one, every views figure above roughly triples - $14 basket, 4.2 sales a week, ~410 views a week. That gap is the difference between tags-fix-it and the shop needing better pictures and bigger baskets, and it is why section 2 is mostly not about tags.
-
-At today's basket ($4.96) you would need **11.9 sales a week on 415 views a week**. You get about 92 views a week. That is why the target is not a tag problem: the same traffic at a $14 basket clears it.
-
-**What actually moves $67 -> $1,000**, in the order that costs least:
-
-1. Re-price the advent garland (F3) from $4.50 to **$13.29** - it is 24 motifs plus a numbers chart plus 24 gift-note slips, and it is priced like a single ornament.
-2. List **bundle A ($34 -> $19)** and **bundle B ($46 -> $24)**. Both written, both still not in the shop. Three sales each is ~$114.
-3. **Buy 1, get 2nd at 40%** on the crochet singles - people buy two patterns anyway; this is the AOV lever, and unlike titles it is not frozen.
-4. Kill the permanent sitewide 25%. Discounting everything teaches buyers to wait and it is why your average order is $4.96.
-5. Video on the five listings earning most (5-15s of the dashboard being filled in). That is the step that turned a $2 PDF into a $12 one here.
-6. Tiles, one listing at a time (section 7).
-
-Modelled bands for the Q4 13 weeks, from `CROCHET_Q4_FIVE.md` and the queue work: as-is **$265**, +bundles **$473**, +bundles with re-pointed $5/day ads **$788**. Scaled to the 17-week freeze window that top band is ~$1,030 - so $1,000 is reachable, but only if all three levers fire.
-
----
-
-## 3. The frozen set - paste, do not retype
-
-Validated by script: 36 listings, exactly 13 tags each, every tag <= 20 characters, no tag contained in another, no duplicates, **and no phrase used by two of your listings**. No trademark-as-headline tags except the four on the Etsy seller tool. No year stamps outside the Year of the Goat title.
-
-### Rules the set was built under
-
-1. **First phrase = the exact query.** Etsy weights leading words hardest and mobile cuts the title near 40 characters, so the product type has to survive the cut.
-2. **One phrase, one listing.** Etsy shows whichever of your own listings already has the sales; every duplicate phrase is a slot spent losing to yourself.
-3. **Tags carry intent, titles carry compatibility.** "Excel and Sheets" belongs in the title, where it also earns the click; "google sheets" left the tag boxes, where it only rented browse traffic.
-4. **A freeze is a season bet.** Seasonal crochet keeps all 13 season tags (their next window is Oct 2027). Files that peak in January spend tail slots on New Year intent so December does not eat the set.
-5. **Unprovable numbers stay out of the text.** A wrong claim normally costs a review; in a freeze it costs four months, because you decided not to touch it.
-
-**17 listings carry a claim you should count before pasting** - flagged under each one.
-
-### 3.1 Christmas Tree Skirt Pattern  ·  `listing/4573853611`
-
-**Lane during the freeze:** season (Christmas)
+**Freeze lane:** season (Christmas)
 
 **Title** (97 chars · mobile shows `Crochet Christmas Tree Skirt Pattern, Sn...`)
 
@@ -95,7 +38,7 @@ Validated by script: 36 listings, exactly 13 tags each, every tag <= 20 characte
 Crochet Christmas Tree Skirt Pattern, Snowflake Bobble Tree Collar, 3 Sizes, PDF Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -107,11 +50,11 @@ Crochet Christmas Tree Skirt Pattern, Snowflake Bobble Tree Collar, 3 Sizes, PDF
 
 _Why_: First phrase is the query buyers type; 'PDF Instant Download' answers the only question a pattern shopper has left.
 
-**Verify before pasting:** 3 sizes. You will not touch this again until February.
+**Verify before pasting:** 3 sizes.
 
-### 3.2 Year of the Goat Pattern
+### 2.2 Year of the Goat Pattern
 
-**Lane during the freeze:** season (Lunar New Year, Feb 6 - the freeze HELPS this one)
+**Freeze lane:** season (Lunar New Year, Feb 6 - the freeze HELPS this one)
 
 **Title** (95 chars · mobile shows `Year of the Goat Crochet Pattern 2027, F...`)
 
@@ -119,7 +62,7 @@ _Why_: First phrase is the query buyers type; 'PDF Instant Download' answers the
 Year of the Goat Crochet Pattern 2027, Fire Goat and Lamb Amigurumi, Lunar New Year Plushie PDF
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -131,11 +74,11 @@ Year of the Goat Crochet Pattern 2027, Fire Goat and Lamb Amigurumi, Lunar New Y
 
 _Why_: '2027' belongs in the title, not a tag - it stays true for the whole freeze; tags keep the annual phrasing so the listing survives to Feb 6.
 
-**Verify before pasting:** both goat AND lamb written up. You will not touch this again until February.
+**Verify before pasting:** both goat AND lamb written up.
 
-### 3.3 Mini Christmas Stocking Pattern  ·  `listing/4577821049`
+### 2.3 Mini Christmas Stocking Pattern  ·  `listing/4577821049`
 
-**Lane during the freeze:** season (Christmas)
+**Freeze lane:** season (Christmas)
 
 **Title** (95 chars · mobile shows `Crochet Mini Stocking Pattern, 24 Motif ...`)
 
@@ -143,7 +86,7 @@ _Why_: '2027' belongs in the title, not a tag - it stays true for the whole free
 Crochet Mini Stocking Pattern, 24 Motif Advent Garland With Numbers Chart, PDF Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -155,11 +98,11 @@ Crochet Mini Stocking Pattern, 24 Motif Advent Garland With Numbers Chart, PDF I
 
 _Why_: 'Advent Garland' is the phrase your tile sells; the numbers chart is the differentiator, so it is in the title now.
 
-**Verify before pasting:** 24 motifs + the numbers chart. You will not touch this again until February.
+**Verify before pasting:** 24 motifs + the numbers chart.
 
-### 3.4 Christmas Wreath Pattern  ·  `listing/4573857903`
+### 2.4 Christmas Wreath Pattern  ·  `listing/4573857903`
 
-**Lane during the freeze:** season (Christmas)
+**Freeze lane:** season (Christmas)
 
 **Title** (82 chars · mobile shows `Crochet Christmas Wreath Pattern With Re...`)
 
@@ -167,7 +110,7 @@ _Why_: 'Advent Garland' is the phrase your tile sells; the numbers chart is the 
 Crochet Christmas Wreath Pattern With Removable Ornaments, 3 Sizes, Door Decor PDF
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -179,11 +122,11 @@ Crochet Christmas Wreath Pattern With Removable Ornaments, 3 Sizes, Door Decor P
 
 _Why_: Removable ornaments moved to the front of the tail - that is the feature nobody else claims.
 
-**Verify before pasting:** 3 sizes. You will not touch this again until February.
+**Verify before pasting:** 3 sizes.
 
-### 3.5 Christmas Ornament Bundle  ·  `listing/4573849581`
+### 2.5 Christmas Ornament Bundle  ·  `listing/4573849581`
 
-**Lane during the freeze:** season (Christmas)
+**Freeze lane:** season (Christmas)
 
 **Title** (110 chars · mobile shows `Christmas Crochet Ornament Bundle, Baubl...`)
 
@@ -191,7 +134,7 @@ _Why_: Removable ornaments moved to the front of the tail - that is the feature 
 Christmas Crochet Ornament Bundle, Bauble Star and Snowflake Patterns, 3 PDFs for Tree Decor, Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -203,11 +146,11 @@ Christmas Crochet Ornament Bundle, Bauble Star and Snowflake Patterns, 3 PDFs fo
 
 _Why_: '3 PDFs' beats '3 Designs': a bundle buyer counts files.
 
-**Verify before pasting:** 3 designs. You will not touch this again until February.
+**Verify before pasting:** 3 designs.
 
-### 3.6 Crochet Christmas Tree Pattern
+### 2.6 Crochet Christmas Tree Pattern
 
-**Lane during the freeze:** season (Christmas)
+**Freeze lane:** season (Christmas)
 
 **Title** (90 chars · mobile shows `Crochet Christmas Tree Pattern, Bobble S...`)
 
@@ -215,7 +158,7 @@ _Why_: '3 PDFs' beats '3 Designs': a bundle buyer counts files.
 Crochet Christmas Tree Pattern, Bobble Stitch Tabletop Tree, 3 Sizes, PDF Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -227,11 +170,11 @@ Crochet Christmas Tree Pattern, Bobble Stitch Tabletop Tree, 3 Sizes, PDF Instan
 
 _Why_: Same shape as #1 so the two tree listings do not read as duplicates in a search page.
 
-**Verify before pasting:** 3 sizes. You will not touch this again until February.
+**Verify before pasting:** 3 sizes.
 
-### 3.7 Christmas Gnome Pattern  ·  `listing/4573699869`
+### 2.7 Christmas Gnome Pattern  ·  `listing/4573699869`
 
-**Lane during the freeze:** season (Christmas)
+**Freeze lane:** season (Christmas)
 
 **Title** (90 chars · mobile shows `No Sew Christmas Gnome Crochet Pattern, ...`)
 
@@ -239,7 +182,7 @@ _Why_: Same shape as #1 so the two tree listings do not read as duplicates in a 
 No Sew Christmas Gnome Crochet Pattern, One Piece Amigurumi, 3 Sizes, PDF Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -251,11 +194,11 @@ No Sew Christmas Gnome Crochet Pattern, One Piece Amigurumi, 3 Sizes, PDF Instan
 
 _Why_: 'No Sew' leads because it is your differentiator and it is invisible in your current tile.
 
-**Verify before pasting:** 3 sizes + one-piece/no-sew claim. You will not touch this again until February.
+**Verify before pasting:** 3 sizes + one-piece/no-sew claim.
 
-### 3.8 Capybara Pattern
+### 2.8 Capybara Pattern
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (91 chars · mobile shows `No Sew Capybara Crochet Pattern, Easy Am...`)
 
@@ -263,7 +206,7 @@ _Why_: 'No Sew' leads because it is your differentiator and it is invisible in y
 No Sew Capybara Crochet Pattern, Easy Amigurumi Plushie for Beginners, PDF Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -275,9 +218,9 @@ No Sew Capybara Crochet Pattern, Easy Amigurumi Plushie for Beginners, PDF Insta
 
 _Why_: Beginner intent moved out of the tags into the title where it also earns clicks.
 
-### 3.9 Loaf Cat Pattern
+### 2.9 Loaf Cat Pattern
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (77 chars · mobile shows `Loaf Cat Crochet Pattern, No Sew Amiguru...`)
 
@@ -285,7 +228,7 @@ _Why_: Beginner intent moved out of the tags into the title where it also earns 
 Loaf Cat Crochet Pattern, No Sew Amigurumi Kitty Plushie, Beginner Animal PDF
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -297,9 +240,9 @@ Loaf Cat Crochet Pattern, No Sew Amigurumi Kitty Plushie, Beginner Animal PDF
 
 _Why_: 'Loaf Cat' is the searched term and the fandom; kept as the first two words.
 
-### 3.10 Emotional Support Bundle
+### 2.10 Emotional Support Bundle
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (94 chars · mobile shows `Emotional Support Crochet Bundle, Sunflo...`)
 
@@ -307,7 +250,7 @@ _Why_: 'Loaf Cat' is the searched term and the fandom; kept as the first two wor
 Emotional Support Crochet Bundle, Sunflower Penguin and Potato Plushies, 3 Mini Amigurumi PDFs
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -319,11 +262,11 @@ Emotional Support Crochet Bundle, Sunflower Penguin and Potato Plushies, 3 Mini 
 
 _Why_: Penguin, potato, sunflower are the three things people search; '3 Mini Amigurumi PDFs' justifies the bundle price.
 
-**Verify before pasting:** 3 plushies in the bundle. You will not touch this again until February.
+**Verify before pasting:** 3 plushies in the bundle.
 
-### 3.11 Bunny Lovey Pattern
+### 2.11 Bunny Lovey Pattern
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (89 chars · mobile shows `Bunny Lovey Crochet Pattern, Baby Blanke...`)
 
@@ -331,7 +274,7 @@ _Why_: Penguin, potato, sunflower are the three things people search; '3 Mini Am
 Bunny Lovey Crochet Pattern, Baby Blanket With Amigurumi Bunny Head, Baby Shower Gift PDF
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -341,11 +284,11 @@ Bunny Lovey Crochet Pattern, Baby Blanket With Amigurumi Bunny Head, Baby Shower
 | `baby blanket PDF` | 16 | `baby crochet pdf` | 16 | `bunny blanket` | 13 |
 | `baby gift pattern` | 17 |  |  |  |  |
 
-_Why_: 'Baby Shower Gift' is the purchase occasion, not 'baby blanket' - it is what makes $8 a bargain.
+_Why_: 'Baby Shower Gift' is the purchase occasion, not 'baby blanket' - it is what makes the price feel small next to a printed blanket.
 
-### 3.12 Sea Turtle Pattern
+### 2.12 Sea Turtle Pattern
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (109 chars · mobile shows `Sea Turtle Crochet Pattern, No Sew Amigu...`)
 
@@ -353,7 +296,7 @@ _Why_: 'Baby Shower Gift' is the purchase occasion, not 'baby blanket' - it is w
 Sea Turtle Crochet Pattern, No Sew Amigurumi Keychain and Bag Charm, Quick PDF Gift for Her, Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -365,11 +308,11 @@ Sea Turtle Crochet Pattern, No Sew Amigurumi Keychain and Bag Charm, Quick PDF G
 
 _Why_: Keychain and bag charm are the two product words; 'Quick' sells the impulse price.
 
-**Verify before pasting:** keychain + bag charm both included. You will not touch this again until February.
+**Verify before pasting:** keychain + bag charm both included.
 
-### 3.13 Baby Dragon Pattern
+### 2.13 Baby Dragon Pattern
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (110 chars · mobile shows `Baby Dragon Crochet Pattern, Amigurumi F...`)
 
@@ -377,7 +320,7 @@ _Why_: Keychain and bag charm are the two product words; 'Quick' sells the impul
 Baby Dragon Crochet Pattern, Amigurumi Fantasy Plushie With Wings, Beginner PDF Fantasy Gift, Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -389,9 +332,9 @@ Baby Dragon Crochet Pattern, Amigurumi Fantasy Plushie With Wings, Beginner PDF 
 
 _Why_: 'With Wings' is the reason a dragon pattern gets clicked over the 4,000 others.
 
-### 3.14 Halloween Bundle
+### 2.14 Halloween Bundle
 
-**Lane during the freeze:** season (Halloween - dead in your window)
+**Freeze lane:** season (Halloween - dead in your window)
 
 **Title** (73 chars · mobile shows `Halloween Crochet Pattern Bundle, Ghost ...`)
 
@@ -399,7 +342,7 @@ _Why_: 'With Wings' is the reason a dragon pattern gets clicked over the 4,000 o
 Halloween Crochet Pattern Bundle, Ghost Pumpkin and Bat Amigurumi, 3 PDFs
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -411,11 +354,11 @@ Halloween Crochet Pattern Bundle, Ghost Pumpkin and Bat Amigurumi, 3 PDFs
 
 _Why_: Three patterns, one price, stated in the title. Do not add a year - the freeze runs past the season.
 
-**Verify before pasting:** 3 patterns. You will not touch this again until February.
+**Verify before pasting:** 3 patterns.
 
-### 3.15 Highland Cow Pattern
+### 2.15 Highland Cow Pattern
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (115 chars · mobile shows `Highland Cow Crochet Pattern, Shaggy Ami...`)
 
@@ -423,7 +366,7 @@ _Why_: Three patterns, one price, stated in the title. Do not add a year - the f
 Highland Cow Crochet Pattern, Shaggy Amigurumi Farm Animal Plushie, Beginner PDF Farm Animal Gift, Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -435,9 +378,9 @@ Highland Cow Crochet Pattern, Shaggy Amigurumi Farm Animal Plushie, Beginner PDF
 
 _Why_: Highland cow is the fandom word; 'Shaggy' is the technique promise.
 
-### 3.16 Axolotl Pattern
+### 2.16 Axolotl Pattern
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (105 chars · mobile shows `No Sew Axolotl Crochet Pattern, Easy Kaw...`)
 
@@ -445,7 +388,7 @@ _Why_: Highland cow is the fandom word; 'Shaggy' is the technique promise.
 No Sew Axolotl Crochet Pattern, Easy Kawaii Amigurumi Plushie, Beginner PDF Kawaii Gift, Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -457,9 +400,9 @@ No Sew Axolotl Crochet Pattern, Easy Kawaii Amigurumi Plushie, Beginner PDF Kawa
 
 _Why_: Axolotl + kawaii + no sew are the three intents; all now in the title.
 
-### 3.17 Chenille Duck Pattern
+### 2.17 Chenille Duck Pattern
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (110 chars · mobile shows `Chenille Duck Crochet Pattern, Low Sew A...`)
 
@@ -467,7 +410,7 @@ _Why_: Axolotl + kawaii + no sew are the three intents; all now in the title.
 Chenille Duck Crochet Pattern, Low Sew Amigurumi Duckling Plushie, Beginner PDF Soft Plushie, Instant Download
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -479,9 +422,9 @@ Chenille Duck Crochet Pattern, Low Sew Amigurumi Duckling Plushie, Beginner PDF 
 
 _Why_: 'Chenille' is the yarn trend that makes this listing get found at all.
 
-### 3.18 Construction Estimate Bundle  ·  `listing/4561670979`
+### 2.18 Construction Estimate Bundle  ·  `listing/4561670979`
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (95 chars · mobile shows `Construction Estimate Spreadsheet Bundle...`)
 
@@ -489,7 +432,7 @@ _Why_: 'Chenille' is the yarn trend that makes this listing get found at all.
 Construction Estimate Spreadsheet Bundle, Contractor Bid, Job Cost and Progress Billing Tracker
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -499,13 +442,13 @@ Construction Estimate Spreadsheet Bundle, Contractor Bid, Job Cost and Progress 
 | `construction invoice` | 20 | `excel estimator` | 15 | `sheets estimator` | 16 |
 | `contractor template` | 19 |  |  |  |  |
 
-_Why_: Dropped 'AIA' from the title too, same reason as the tag; 'Progress Billing' is the feature worth charging $45 for.
+_Why_: Dropped 'AIA' from the title too, same reason as the tag; 'Progress Billing' is the feature that justifies the highest price in your shop.
 
-**Verify before pasting:** progress billing tab exists. You will not touch this again until February.
+**Verify before pasting:** progress billing tab exists.
 
-### 3.19 Church Management Spreadsheet
+### 2.19 Church Management Spreadsheet
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (101 chars · mobile shows `Church Management Spreadsheet, Member Di...`)
 
@@ -513,7 +456,7 @@ _Why_: Dropped 'AIA' from the title too, same reason as the tag; 'Progress Billi
 Church Management Spreadsheet, Member Directory, Giving Tracker and Donation Reports Excel and Sheets
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -525,9 +468,9 @@ Church Management Spreadsheet, Member Directory, Giving Tracker and Donation Rep
 
 _Why_: 'Giving' and 'Donation Reports' are the two phrases a church admin actually types.
 
-### 3.20 Home Renovation Budget  ·  `listing/4549642404`
+### 2.20 Home Renovation Budget  ·  `listing/4549642404`
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (88 chars · mobile shows `Home Renovation Budget Spreadsheet, Remo...`)
 
@@ -535,7 +478,7 @@ _Why_: 'Giving' and 'Donation Reports' are the two phrases a church admin actual
 Home Renovation Budget Spreadsheet, Remodel Cost Tracker and Contractor Quote Comparison
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -547,9 +490,9 @@ Home Renovation Budget Spreadsheet, Remodel Cost Tracker and Contractor Quote Co
 
 _Why_: 'Quote Comparison' is the differentiator against a hundred remodel trackers - it is now in the tail.
 
-### 3.21 School Management Spreadsheet  ·  `listing/4549077688`
+### 2.21 School Management Spreadsheet  ·  `listing/4549077688`
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (89 chars · mobile shows `School Management Spreadsheet, Student R...`)
 
@@ -557,7 +500,7 @@ _Why_: 'Quote Comparison' is the differentiator against a hundred remodel tracke
 School Management Spreadsheet, Student Roster, Fees and Attendance Tracker With Dashboard
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -569,9 +512,9 @@ School Management Spreadsheet, Student Roster, Fees and Attendance Tracker With 
 
 _Why_: 'With Dashboard' matters to an admin buyer; it was in the tags only before.
 
-### 3.22 Small Business Bookkeeping
+### 2.22 Small Business Bookkeeping
 
-**Lane during the freeze:** hybrid - Q4 now, New Year tail
+**Freeze lane:** hybrid - Q4 now, New Year tail
 
 **Title** (95 chars · mobile shows `Small Business Bookkeeping Spreadsheet, ...`)
 
@@ -579,7 +522,7 @@ _Why_: 'With Dashboard' matters to an admin buyer; it was in the tags only befor
 Small Business Bookkeeping Spreadsheet, Income, Expense and Profit Tracker for Excel and Sheets
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -591,9 +534,9 @@ Small Business Bookkeeping Spreadsheet, Income, Expense and Profit Tracker for E
 
 _Why_: 'for Excel and Sheets' answers the compatibility question that generates your FAQ images.
 
-### 3.23 Rental Property Analysis
+### 2.23 Rental Property Analysis
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (91 chars · mobile shows `Rental Property Analysis Spreadsheet, Ca...`)
 
@@ -601,7 +544,7 @@ _Why_: 'for Excel and Sheets' answers the compatibility question that generates 
 Rental Property Analysis Spreadsheet, Cash Flow, Cap Rate and DSCR Calculator for Investors
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -613,11 +556,11 @@ Rental Property Analysis Spreadsheet, Cash Flow, Cap Rate and DSCR Calculator fo
 
 _Why_: Cap rate and DSCR are the two calculator words an investor searches; kept as a pair.
 
-**Verify before pasting:** DSCR field actually computes DSCR. You will not touch this again until February.
+**Verify before pasting:** DSCR field actually computes DSCR.
 
-### 3.24 Rental Property Management
+### 2.24 Rental Property Management
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (115 chars · mobile shows `Rental Property Management Spreadsheet, ...`)
 
@@ -625,7 +568,7 @@ _Why_: Cap rate and DSCR are the two calculator words an investor searches; kept
 Rental Property Management Spreadsheet, Rent Ledger, Tenant Records and Maintenance Log Rent Roll, Excel and Sheets
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -637,9 +580,9 @@ Rental Property Management Spreadsheet, Rent Ledger, Tenant Records and Maintena
 
 _Why_: Rent ledger + maintenance log are the two tabs a landlord pays for.
 
-### 3.25 Personal Finance Bundle  ·  `listing/4534488947`
+### 2.25 Personal Finance Bundle  ·  `listing/4534488947`
 
-**Lane during the freeze:** hybrid - Q4 now, New Year tail
+**Freeze lane:** hybrid - Q4 now, New Year tail
 
 **Title** (99 chars · mobile shows `Personal Finance Spreadsheet Bundle, Bud...`)
 
@@ -647,7 +590,7 @@ _Why_: Rent ledger + maintenance log are the two tabs a landlord pays for.
 Personal Finance Spreadsheet Bundle, Budget, Debt Payoff and Net Worth Tracker for Excel and Sheets
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -659,9 +602,9 @@ Personal Finance Spreadsheet Bundle, Budget, Debt Payoff and Net Worth Tracker f
 
 _Why_: Bundle word first, three product words after - matches how a finance buyer browses.
 
-### 3.26 Wedding Planner  ·  `listing/4534483099`
+### 2.26 Wedding Planner  ·  `listing/4534483099`
 
-**Lane during the freeze:** evergreen with a Jan-Feb engagement peak
+**Freeze lane:** evergreen with a Jan-Feb engagement peak
 
 **Title** (89 chars · mobile shows `Wedding Planner Spreadsheet, Wedding Bud...`)
 
@@ -669,7 +612,7 @@ _Why_: Bundle word first, three product words after - matches how a finance buye
 Wedding Planner Spreadsheet, Wedding Budget, Guest List, Seating Chart and Vendor Tracker
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -679,13 +622,13 @@ Wedding Planner Spreadsheet, Wedding Budget, Guest List, Seating Chart and Vendo
 | `wedding sheet` | 13 | `bride planning` | 14 | `wedding organizer` | 17 |
 | `wedding cost plan` | 17 |  |  |  |  |
 
-_Why_: 'Spreadsheet' leads, not 'Wedding Planner', or you rank beside printable PDFs at $3.
+_Why_: 'Spreadsheet' leads, not 'Wedding Planner', or you rank beside cheap printable PDFs.
 
-**Verify before pasting:** 52 tabs (it is in your live title now). You will not touch this again until February.
+**Verify before pasting:** 52 tabs (it is in your live title now).
 
-### 3.27 Budget Spreadsheet Bundle  ·  `listing/4534495626`
+### 2.27 Budget Spreadsheet Bundle  ·  `listing/4534495626`
 
-**Lane during the freeze:** hybrid - Q4 now, New Year tail
+**Freeze lane:** hybrid - Q4 now, New Year tail
 
 **Title** (85 chars · mobile shows `Budget Spreadsheet Bundle, 50 Templates ...`)
 
@@ -693,7 +636,7 @@ _Why_: 'Spreadsheet' leads, not 'Wedding Planner', or you rank beside printable 
 Budget Spreadsheet Bundle, 50 Templates for Bills, Debt and Savings, Excel and Sheets
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -703,13 +646,13 @@ Budget Spreadsheet Bundle, 50 Templates for Bills, Debt and Savings, Excel and S
 | `budget templates50` | 18 | `bill by bill plan` | 17 | `money goal plan` | 15 |
 | `budget workbook` | 15 |  |  |  |  |
 
-_Why_: Count in the title, 'Excel and Sheets' in the tail; the price ($28) needs the number.
+_Why_: Count in the title, 'Excel and Sheets' in the tail; a bundle price needs the number to justify it.
 
-**Verify before pasting:** 50 templates - count them. You will not touch this again until February.
+**Verify before pasting:** 50 templates - count them.
 
-### 3.28 Lifestyle Planner Bundle
+### 2.28 Lifestyle Planner Bundle
 
-**Lane during the freeze:** hybrid - Q4 now, New Year tail
+**Freeze lane:** hybrid - Q4 now, New Year tail
 
 **Title** (78 chars · mobile shows `Lifestyle Planner Spreadsheet Bundle, Me...`)
 
@@ -717,7 +660,7 @@ _Why_: Count in the title, 'Excel and Sheets' in the tail; the price ($28) needs
 Lifestyle Planner Spreadsheet Bundle, Meal, Habit, Fitness and Budget Trackers
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -729,9 +672,9 @@ Lifestyle Planner Spreadsheet Bundle, Meal, Habit, Fitness and Budget Trackers
 
 _Why_: Four tracker names in the title so all four queries match, not just the first.
 
-### 3.29 Etsy Seller Spreadsheet  ·  `listing/4534364844`
+### 2.29 Etsy Seller Spreadsheet  ·  `listing/4534364844`
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (93 chars · mobile shows `Etsy Seller Spreadsheet, Sales, Fees, Pr...`)
 
@@ -739,7 +682,7 @@ _Why_: Four tracker names in the title so all four queries match, not just the f
 Etsy Seller Spreadsheet, Sales, Fees, Profit and Inventory Tracker With Bookkeeping Dashboard
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -751,11 +694,11 @@ Etsy Seller Spreadsheet, Sales, Fees, Profit and Inventory Tracker With Bookkeep
 
 _Why_: Fees and Profit lead - that is the reason an Etsy seller buys a spreadsheet instead of a notebook.
 
-**Verify before pasting:** fees column matches Etsy's real 6.5%+3%+$0.25. You will not touch this again until February.
+**Verify before pasting:** fees column matches Etsy's real percentage plus fixed transaction fee.
 
-### 3.30 Travel Planner
+### 2.30 Travel Planner
 
-**Lane during the freeze:** hybrid - Q4 now, New Year tail
+**Freeze lane:** hybrid - Q4 now, New Year tail
 
 **Title** (94 chars · mobile shows `Travel Planner Spreadsheet, Trip Itinera...`)
 
@@ -763,7 +706,7 @@ _Why_: Fees and Profit lead - that is the reason an Etsy seller buys a spreadshe
 Travel Planner Spreadsheet, Trip Itinerary, Vacation Budget and Packing List, Excel and Sheets
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -775,9 +718,9 @@ Travel Planner Spreadsheet, Trip Itinerary, Vacation Budget and Packing List, Ex
 
 _Why_: Itinerary, budget and packing list: the three searches, in the order people plan a trip.
 
-### 3.31 Family Budget
+### 2.31 Family Budget
 
-**Lane during the freeze:** hybrid - Q4 now, New Year tail
+**Freeze lane:** hybrid - Q4 now, New Year tail
 
 **Title** (95 chars · mobile shows `Family Budget Spreadsheet, Household Fin...`)
 
@@ -785,7 +728,7 @@ _Why_: Itinerary, budget and packing list: the three searches, in the order peop
 Family Budget Spreadsheet, Household Finance Dashboard, Paycheck and Debt Tracker, Excel Sheets
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -797,9 +740,9 @@ Family Budget Spreadsheet, Household Finance Dashboard, Paycheck and Debt Tracke
 
 _Why_: 'Household Finance Dashboard' is what a family wants; paycheck first because it is the pay-cycle hook.
 
-### 3.32 Cottage Bakery Business
+### 2.32 Cottage Bakery Business
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (80 chars · mobile shows `Cottage Bakery Spreadsheet, Recipe Costi...`)
 
@@ -807,7 +750,7 @@ _Why_: 'Household Finance Dashboard' is what a family wants; paycheck first beca
 Cottage Bakery Spreadsheet, Recipe Costing, Orders, Inventory and Profit Tracker
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -819,9 +762,9 @@ Cottage Bakery Spreadsheet, Recipe Costing, Orders, Inventory and Profit Tracker
 
 _Why_: Recipe costing is the product; everything else is a feature listed after it.
 
-### 3.33 Catering Business Spreadsheet
+### 2.33 Catering Business Spreadsheet
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (86 chars · mobile shows `Catering Business Spreadsheet, Event Pla...`)
 
@@ -829,7 +772,7 @@ _Why_: Recipe costing is the product; everything else is a feature listed after 
 Catering Business Spreadsheet, Event Planner, Food Cost Calculator and Invoice Tracker
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -841,9 +784,9 @@ Catering Business Spreadsheet, Event Planner, Food Cost Calculator and Invoice T
 
 _Why_: Event planner and food cost calculator are the two buyers of a catering file.
 
-### 3.34 Crochet Craft Fair Tracker  ·  `listing/4578849733`
+### 2.34 Crochet Craft Fair Tracker  ·  `listing/4578849733`
 
-**Lane during the freeze:** evergreen
+**Freeze lane:** evergreen
 
 **Title** (89 chars · mobile shows `Crochet Craft Fair Tracker Spreadsheet, ...`)
 
@@ -851,7 +794,7 @@ _Why_: Event planner and food cost calculator are the two buyers of a catering f
 Crochet Craft Fair Tracker Spreadsheet, Sales, Inventory and Yarn Cost Pricing Calculator
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -863,11 +806,11 @@ Crochet Craft Fair Tracker Spreadsheet, Sales, Inventory and Yarn Cost Pricing C
 
 _Why_: 'Yarn Cost Pricing Calculator' is the phrase your tags already proved people search.
 
-**Verify before pasting:** 14 tabs Premium / 8 Basic. You will not touch this again until February.
+**Verify before pasting:** 14 tabs Premium / 8 Basic.
 
-### 3.35 Secret Santa Spreadsheet  ·  `listing/4578846463`
+### 2.35 Secret Santa Spreadsheet  ·  `listing/4578846463`
 
-**Lane during the freeze:** hybrid - Q4 now, New Year tail
+**Freeze lane:** hybrid - Q4 now, New Year tail
 
 **Title** (93 chars · mobile shows `Secret Santa Spreadsheet, Name Draw Gene...`)
 
@@ -875,7 +818,7 @@ _Why_: 'Yarn Cost Pricing Calculator' is the phrase your tags already proved peo
 Secret Santa Spreadsheet, Name Draw Generator With Budget Rules, White Elephant Party Tracker
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -885,11 +828,11 @@ Secret Santa Spreadsheet, Name Draw Generator With Budget Rules, White Elephant 
 | `group gift` | 10 | `gift exchange tool` | 18 | `random name draw` | 16 |
 | `office party` | 12 |  |  |  |  |
 
-_Why_: 'Name Draw Generator' is what makes this $9 not a spreadsheet; the party words are for November office email threads.
+_Why_: 'Name Draw Generator' is what makes this a game, not a spreadsheet; the party words are for November office email threads.
 
-### 3.36 Christmas Gift Tracker  ·  `listing/4573955047`
+### 2.36 Christmas Gift Tracker  ·  `listing/4573955047`
 
-**Lane during the freeze:** hybrid - Q4 now, New Year tail
+**Freeze lane:** hybrid - Q4 now, New Year tail
 
 **Title** (94 chars · mobile shows `Christmas Gift Tracker Spreadsheet, Holi...`)
 
@@ -897,7 +840,7 @@ _Why_: 'Name Draw Generator' is what makes this $9 not a spreadsheet; the party 
 Christmas Gift Tracker Spreadsheet, Holiday Gift Budget, Shopping List and Countdown Dashboard
 ```
 
-**13 tags** (characters shown so you can see nothing is near the wall by accident)
+**13 tags** with their character counts
 
 | | | | | | |
 |---|---|---|---|---|---|
@@ -909,13 +852,11 @@ Christmas Gift Tracker Spreadsheet, Holiday Gift Budget, Shopping List and Count
 
 _Why_: Countdown dashboard stays - it is the reason your gift tracker beat your other files on views.
 
-**Verify before pasting:** 2,500+ formulas / 56 dropdowns / 6 charts / 46+ colour rules / 13 tabs / 18 occasions. You will not touch this again until February.
+**Verify before pasting:** 2,500+ formulas / 56 dropdowns / 6 charts / 46+ colour rules / 13 tabs / 18 occasions.
 
----
+## 3. Compact paste table
 
-## 4. Compact paste table
-
-| # | id | title | 13 tags |
+| # | live id | title | 13 tags |
 |---|---|---|---|
 | 1 | 4573853611 | Crochet Christmas Tree Skirt Pattern, Snowflake Bobble Tree Collar, 3 Sizes, PDF Instant Download | crochet tree skirt / tree skirt pattern / xmas crochet pdf / crochet tree collar / snowflake pdf / holiday crochet pdf / Christmas home decor / bobble stitch pdf / crochet xmas decor / Christmas PDF / tree collar crochet / tree skirt pdf / Christmas craft |
 | 2 |  | Year of the Goat Crochet Pattern 2027, Fire Goat and Lamb Amigurumi, Lunar New Year Plushie PDF | goat crochet pattern / goat amigurumi / lamb crochet pattern / Year of Goat / 2027 crochet pattern / lunar new year / Chinese New Year / fire goat plushie / animal crochet PDF / goat plush pdf / goat plushie pdf / easy amigurumi pdf / year of the goat pdf |
@@ -954,13 +895,11 @@ _Why_: Countdown dashboard stays - it is the reason your gift tracker beat your 
 | 35 | 4578846463 | Secret Santa Spreadsheet, Name Draw Generator With Budget Rules, White Elephant Party Tracker | Secret Santa / santa name generator / santa swap game / name draw generator / Christmas party / gift budget sheet / white elephant / holiday gift tracker / party planning tool / group gift / gift exchange tool / random name draw / office party |
 | 36 | 4573955047 | Christmas Gift Tracker Spreadsheet, Holiday Gift Budget, Shopping List and Countdown Dashboard | christmas gift log / gift budget planner / xmas shopping list / gift spreadsheet / gift list tracker / gift season plan / seasonal budget xlsx / gift countdown / Secret Santa planner / Christmas organizer / present tracker / gift sheets tab / Excel gift tracker |
 
-CSV twin for Google Sheets: `FINAL_SEO_36.csv`.
+CSV twin for Sheets: `FINAL_SEO_36.csv`.
 
----
+## 4. Every change made to your document
 
-## 5. Every change made to your document
-
-199 tag slots replaced out of 468 (43%). Reason classes: over the 20-character wall, or shared with another of your own listings, or a brand/trademark used as a headline.
+199 of 468 tag slots replaced (43%). Three reasons only: over the 20-character wall, shared with another of your own listings, or a brand/trademark used as a headline.
 
 | # | listing | out | in |
 |---|---|---|---|
@@ -1001,103 +940,79 @@ CSV twin for Google Sheets: `FINAL_SEO_36.csv`.
 | 35 | Secret Santa Spreadsheet | `secret santa draw`, `gift exchange`, `gift budget tracker`, `christmas spreadsheet`, `holiday planner` | `santa name generator`, `santa swap game`, `gift budget sheet`, `group gift`, `office party` |
 | 36 | Christmas Gift Tracker | `christmas gift tracker`, `holiday shopping list`, `christmas spreadsheet`, `christmas planner`, `holiday budget`, `google sheets gift` | `christmas gift log`, `xmas shopping list`, `gift spreadsheet`, `gift season plan`, `seasonal budget xlsx`, `gift sheets tab` |
 
-Title changes in the same pass: `AIA billing` removed from #18's title; `for Excel and Sheets` / `Excel and Sheets` added to the spreadsheet titles that had room; the goat keeps `2027` in the title only; #26 now leads with `Wedding Planner Spreadsheet` rather than the printable-planner phrasing.
+Title changes: `AIA billing` out of #18; `Excel and Sheets` added to the spreadsheet titles that had room; the goat keeps `2027` in the title only; #26 now leads with `Wedding Planner Spreadsheet` instead of printable-planner phrasing.
 
----
-
-## 6. What was wrong with the document you sent
+## 5. What was wrong with the document you sent
 
 | # | defect | how many | consequence |
 |---|---|---|---|
-| 1 | Tags over Etsy's 20-character limit | **37** | the field rejects the string - the listing silently ships with 10 or 11 tags, and the broken ones were usually the head keywords (`construction estimate`, `bookkeeping spreadsheet`, `real estate spreadsheet`) |
-| 2 | Phrases shared between your own listings | **43 strings, 109 slots (23%)** | you bid against yourself; `beginner crochet` on 8 listings, `google sheets budget` on all 4 budget files |
-| 3 | `AIA billing template` | 1 tag + 1 title | American Institute of Architects' mark, in a shop that has already had IP takedowns |
-| 4 | Tag contained inside another tag of the same listing | 6 | substring matching means the short one already covers the long one - six free slots |
-| 5 | Title Case | 75 | harmless (Etsy lowercases) but it hides how bad the collisions were |
-| 6 | Seasonality | 2 | Year of the Goat published 4 months early (LNY is 6 Feb 2027); `trick or treat` on Halloween pulls costume shoppers into a pattern listing |
-| 7 | Unverifiable numeric claims | 5 title sets | `3 Sizes`, `24 Christmas Stockings`, `50 Templates`, `DSCR`, `52 tabs` |
-| 8 | The list did not match the shop | 1 | no Nativity entry, though `patterns/F1-nativity-set.md` exists |
+| 1 | Tags over Etsy's 20-character limit | **37** | the field rejects the string, so the listing ships with 10 or 11 tags - and the broken ones were usually head keywords (`construction estimate`, `bookkeeping spreadsheet`, `real estate spreadsheet`) |
+| 2 | Phrases shared between your own listings | **43 strings / 109 slots** | you bid against yourself: `beginner crochet` on 8 listings, `google sheets budget` on all 4 budget files |
+| 3 | `AIA billing template` | 1 tag + 1 title | the American Institute of Architects' mark, in a shop that has already had IP takedowns |
+| 4 | A tag contained inside another tag of the same listing | 6 | substring matching means the short one already covers the long one - six free slots |
+| 5 | Title Case | 75 | harmless, but it hid how bad the collisions were: `Christmas` and `christmas` are the same string to Etsy |
+| 6 | Seasonality | 2 | the goat published four months early (Lunar New Year is 6 Feb 2027); `trick or treat` pulls costume shoppers into a pattern listing |
+| 7 | Numeric claims with no proof behind them | 5 title sets | `3 Sizes`, `24 Christmas Stockings`, `50 Templates`, `DSCR`, `52 tabs` |
+| 8 | It did not match the shop | 1 | no Nativity entry, though `patterns/F1-nativity-set.md` exists |
 
-What the document got right, and kept: 13 multi-word tags with no filler; product keyword as the first phrase; tabs named in spreadsheet titles; and the image rule - *real finished samples, never AI shown as if real* - which is the Kim review and the rule all tiles here are built under.
+What it got right, and kept: 13 multi-word tags with no filler, product keyword as the first phrase, tabs named inside spreadsheet titles, and the image rule - real finished samples, never AI shown as if real. Its own checklist survived 7 of 8 bullets; the rider on "list every included tab" is *only tabs you counted*. It was missing video, the price ladder, and the note that a sitewide discount is not free.
 
-Its checklist: 7 of 8 bullets kept verbatim. The rider on "list every included tab" is *only tabs you counted*. Missing from it entirely: one 5-15s video per listing, the price ladder per niche, and no permanent sitewide discount.
+## 6. Image work list, and the rule that governs it
 
----
+Ranked queue with the reasoning lives in `TOP15_IMAGE_QUEUE.md`. Status:
 
-## 7. Image queue - 15 listings, ranked
+| # | listing | id | why the image matters | tile |
+|---|---|---|---|---|
+| 1 | Christmas Gift Tracker Spreadsheet | 4573955047 | only listing where price, Q4 demand and the ad floor overlap | A |
+| 2 | Crochet Craft Fair Tracker Spreadsheet | 4578849733 | **done** - tiles built; live gallery also needs the catering image removed | A |
+| 3 | Secret Santa Spreadsheet | 4578846463 | pure Q4, buyer decides in one glance, currently a plain grid shot | A |
+| 4 | Wedding Planner Spreadsheet, 52 Tabs | 4534483099 | Etsy is cropping this thumbnail off-centre; the "52" is the whole pitch | A |
+| 5 | Personal Finance Spreadsheet Bundle | 4534488947 | also cropped; a bundle must look like a bundle | A |
+| 6 | Budget Spreadsheet Bundle, 50 Templates | 4534495626 | one extra sale here = six pattern sales | A |
+| 7 | Construction Estimate Spreadsheet Bundle | 4561670979 | biggest single sale in the shop; the price needs the most trustworthy tile | A |
+| 8 | School Management Spreadsheet | 4549077688 | institutional buyer, checks competence in the first image | A |
+| 9 | Home Renovation Budget Spreadsheet | 4549642404 | high-intent search, emotional purchase, tile is the difference | A |
+| 10 | Etsy Shop Spreadsheet | 4534364844 | you are the customer; a screenshot of your own numbers is the proof | A |
+| 11 | Crochet Christmas Tree Skirt Pattern | 4573853611 | F-ready listing, needs the 3-sizes row and a real page | B |
+| 12 | Crochet Mini Stocking / Advent Garland | 4577821049 | becomes F3 at (see the metrics file) - the tile must show 24 motifs, not one | B |
+| 13 | Crochet Christmas Wreath Pattern | 4573857903 | door-decor buyers browse on image alone | B |
+| 14 | Crochet Christmas Ornament Bundle 3-in-1 | 4573849581 | bundle framing is the only way a (see the metrics file) file reads as more than one | B |
+| 15 | No Sew Christmas Gnome Pattern | 4573699869 | "no sew" is the differentiator and it is invisible in the current tile | B |
 
-| # | listing | id | realised | net/sale | why the image matters | tile |
-|---|---|---|---|---|---|---|
-| 1 | Christmas Gift Tracker Spreadsheet | 4573955047 | $11.99 | $10.40 | only listing where price, Q4 demand and the $10 ad floor overlap | A |
-| 2 | Crochet Craft Fair Tracker Spreadsheet | 4578849733 | $9.74 | $8.36 | **done** - tiles built; live gallery also needs the catering image removed | A |
-| 3 | Secret Santa Spreadsheet | 4578846463 | $8.99 | $7.69 | pure Q4, buyer decides in one glance, currently a plain grid shot | A |
-| 4 | Wedding Planner Spreadsheet, 52 Tabs | 4534483099 | $11.99 | $10.40 | Etsy is cropping this thumbnail off-centre; the "52" is the whole pitch | A |
-| 5 | Personal Finance Spreadsheet Bundle | 4534488947 | $10.49 | $9.04 | also cropped; a bundle must look like a bundle | A |
-| 6 | Budget Spreadsheet Bundle, 50 Templates | 4534495626 | $28.12 | $25.00 | one extra sale here = six pattern sales | A |
-| 7 | Construction Estimate Spreadsheet Bundle | 4561670979 | $45.00 | $40.27 | biggest single sale in the shop; $45 needs the most trustworthy tile | A |
-| 8 | School Management Spreadsheet | 4549077688 | $26.24 | $23.30 | institutional buyer, checks competence in the first image | A |
-| 9 | Home Renovation Budget Spreadsheet | 4549642404 | $16.49 | $14.47 | high-intent search, emotional purchase, tile is the difference | A |
-| 10 | Etsy Shop Spreadsheet | 4534364844 | $13.49 | $11.76 | you are the customer; a screenshot of your own numbers is the proof | A |
-| 11 | Crochet Christmas Tree Skirt Pattern | 4573853611 | $7.50 | $6.34 | F-ready listing, needs the 3-sizes row and a real page | B |
-| 12 | Crochet Mini Stocking / Advent Garland | 4577821049 | $4.50 | $3.63 | becomes F3 at $13.29 - the tile must show 24 motifs, not one | B |
-| 13 | Crochet Christmas Wreath Pattern | 4573857903 | $6.75 | $5.65 | door-decor buyers browse on image alone | B |
-| 14 | Crochet Christmas Ornament Bundle 3-in-1 | 4573849581 | $4.50 | $3.63 | bundle framing is the only way a $4.50 file reads as more than one | B |
-| 15 | No Sew Christmas Gnome Pattern | 4573699869 | $4.50 | $3.63 | "no sew" is the differentiator and it is invisible in the current tile | B |
+*(price columns deliberately dropped here - they are in the metrics file and on Etsy; this file is the one you might print or share.)*
 
-**Why images matter more than the tag set now:** the evidence rule. Many visits and no sales means that listing's pictures; few views means discovery. Your Q4 listings mostly have the first problem, which is why the freeze is safe: discovery is set, conversion is the work.
+**The tile must describe the file that downloads.** Two live examples of what that means:
 
-Two live-gallery defects found by reading the listings rather than guessing:
+1. The Crochet Craft Fair gallery's image 10 is, in Etsy's own alt text, "a digital monthly summary dashboard for a **catering business** manager" - a screenshot from a different listing. Delete it.
+2. **Listing `4577821049` is a mismatch waiting to happen.** Its live description sells a 9-page PDF: 24 mini stockings in 2 sizes (2.5in and 4in), 6 cuff variations, an A-Z monogram chart, a bonus 12-mini version, about 120g of scrap yarn, roughly 40 minutes each. The tile built for it (`01-main.png`) headlines 24 **numbered** motifs, a 1-24 chart and 24 gift notes - which is `patterns/F3-advent-garland.md`, a different file that has not been uploaded and is not yet worked by hand. **Do not paste those tiles with the current file, and do not swap in F3 without deciding what happens to the 2 sizes, the monogram chart and the 12-mini bonus.** Either extend F3 to absorb them or keep your file and use the honest-tile spec for what you actually ship. That is the exact shape of the 1-star review: picture and file disagreeing.
 
-1. **Wrong product in the Crochet Craft Fair gallery** - image 10 is, in Etsy's own alt text, "a digital monthly summary dashboard for a **catering business** manager". Delete or replace it: a buyer who spots a different product name in the gallery has Kim's exact complaint.
-2. **Palette drift** - several craft-fair tiles use dark purple headers; the brand kit is forest `#1F4634` / terracotta `#C2643F` on cream `#F5EFE6`. Purple next to cream reads as two sellers, and two sellers reads as a reseller. Let the product keep its own theme colour; keep the **frame** consistent.
+## 7. Tiles on disk
 
-## 8. Tiles on disk
-
-| listing | file | size | raw link |
-|---|---|---|---|
-| `4577821049` | `01-main.png` | 597 KB | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4577821049/01-main.png |
-| `4577821049` | `02-contents.png` | 347 KB | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4577821049/02-contents.png |
-| `4577821049` | `03-honest.png` | 155 KB | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4577821049/03-honest.png |
-| `4578846463` | `01-rules.png` | 158 KB | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4578846463/01-rules.png |
-| `4578849733` | `01-main.png` | 137 KB | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4578849733/01-main.png |
-| `4578849733` | `02-editions.png` | 176 KB | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4578849733/02-editions.png |
-
-All 2700 x 2025 (Etsy's square display crop). The generator is `make_tile.py`; the honesty rule is enforced in code - pattern tiles can only paste rasterised pages of the real PDF, and spreadsheet tiles draw real tab names over an empty grid, never invented figures.
-
----
-
-## 9. Patterns - and the honest status line
-
-| file | what | state |
+| listing | file | raw link (needs repo access now the repo is private) |
 |---|---|---|
-| `patterns/F1-nativity-set.md` | Nativity set, 7 figures | written, PDF exported, **untested by hand** |
-| `patterns/F2-baby-loveys.md` | 3 lovies | written, PDF exported, untested |
-| `patterns/F3-advent-garland.md` | 24 numbered minis + 1-24 chart + 24 gift notes | written, PDF 14 pp, verified rounds and pages |
-| `patterns/F4-stockings.md` | mini stockings | written, PDF exported, untested |
-| `patterns/charts/` | 26 letter + 24 number link-stitch charts | generated and grid-verified |
-| `patterns/pdf/` | 7 PDFs | the files a buyer would download |
-| `Novality_Crochet_Patterns_v1.zip` | 28 entries | the pack, `unzip -t` clean |
+| `4577821049` | `01-main.png` | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4577821049/01-main.png |
+| `4577821049` | `02-contents.png` | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4577821049/02-contents.png |
+| `4577821049` | `03-honest.png` | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4577821049/03-honest.png |
+| `4578846463` | `01-rules.png` | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4578846463/01-rules.png |
+| `4578849733` | `01-main.png` | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4578849733/01-main.png |
+| `4578849733` | `02-editions.png` | https://github.com/arbabkhan007/Etsy-Overall/raw/arena/01a09a2a-etsy-overall/tiles/4578849733/02-editions.png |
 
-`TEST_STATUS: untested` stays in those files until you stitch one. It is not a formality: the whole reason your 1-star exists is a picture and a file disagreeing. When you stitch F3, tell me and I will flip the status and rebuild the PDFs and the zip.
+All 2700 x 2025 (Etsy's square display crop). `make_tile.py` is the generator, and the honesty rule is in the code: pattern tiles can only paste rasterised pages of the real PDF, spreadsheet tiles draw real tab names over an empty grid. If you need a link a buyer or a VA can open without GitHub access, download the PNG and put it wherever you keep working files - do not re-publicise the repo.
 
-## 10. Rules cheat-sheet
+## 8. Freeze protocol
+
+- Do all 36 in **one sitting**, this week. Every day of drift is a day of the Q4 ramp you do not get back.
+- **Expect a 3-10 day wobble in impressions**, then a rebuild. That dip is the crawl re-matching, not a verdict. Reacting to it is the single most expensive mistake available inside a freeze.
+- The freeze covers titles and tags only. Sale, prices, ads, images and video stay adjustable - and that is where the quarter is actually won (see the metrics file).
+- One exception: listing #14 (Halloween) is out of season inside this window. Paste it, ignore it, revisit in August.
+- If a listing is already ranking, change **tags only** - a title edit resets the match you rank on. This set changes both, so do it in one sitting rather than rolling, and let the re-learning happen once.
+
+## 9. Rules cheat-sheet
 
 - **Tags are the brief for the tile, not the copy on it.** Tags choose which promise the picture headlines.
 - **Count, then claim.** Declared counts must equal delivered counts - in files, tabs, formulas and tiles.
 - **Never let a number on a tile be true of the repo but false of the product.**
-- **A freeze applies to text, not to money.** Prices, sales, ads and images stay adjustable; that is where the quarter is actually won.
-- **Expect a 3-10 day wobble after a title change.** Reacting to it is the expensive mistake.
-- **$1,000 is a basket-size problem** at your traffic. 4.2 sales a week at $14 clears it; 11.9 at $5 does not exist.
-- **Seasons have publish dates:** 27 Oct last useful publish for Christmas ranking, 27 Nov Black Friday, 12 Dec last day a hand-stitched item can land, 6 Feb 2027 Lunar New Year.
-
-## 11. Still owed by you
-
-| item | why it blocks |
-|---|---|
-| one .xlsx (either listing) | 17 titles carry numeric claims I cannot verify; freeze makes them 4-month commitments |
-| bundles A and B listed | the largest single AOV lever in section 2 |
-| Promoted Impressions + CVR after 7 days of re-pointed ads | decides whether $5/day stays |
-| one stitched F3 | the only thing that flips `TEST_STATUS: untested` |
-| `patterns/charts/nativity-link-stitch.md` | F1 references a chart file that is not in the pack |
-| tags for queue row 4 (Wedding Planner) | next tile in the one-at-a-time queue |
+- **A freeze applies to text, not to money.**
+- **Many visits and no sales is that listing's pictures. Few views is discovery.** Diagnose before editing.
+- **Seasons have publish dates:** 27 Oct last useful publish for Christmas ranking, 27 Nov Black Friday, 12 Dec last day a hand-finished item lands, 6 Feb 2027 Lunar New Year.
 

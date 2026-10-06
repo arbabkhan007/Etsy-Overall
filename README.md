@@ -249,3 +249,14 @@ every discount line.
 `make_brand_assets.py` draws the shop's brand kit (banner, icon, logos, section headers,
 listing templates) at Etsy's real pixel specs, and `BRAND_KIT.md` explains the rules.
 Deterministic on purpose: the assets have to survive being 160px in a search result.
+
+## The two handoff files
+
+| file | contents | share it? |
+|---|---|---|
+| `NOVALITY_LISTINGS.md` | the frozen 36 titles + 468 tags, what was wrong with the previous document, every change made, the image work list, the freeze protocol | yes - it is built and **asserted** to carry no prices, traffic or conversion figures |
+| `NOVALITY_METRICS.md` | your Stats, both conversion rates, the target maths, the price ladder, the ad maths, what is owed | no |
+
+Both are generated: `python3 make_docs.py` rebuilds them from `seo_final.json`, `audit/`,
+`TOP15_IMAGE_QUEUE.md` and `tiles/`, and refuses to write if the public file leaks a figure or if any
+tag cell disagrees with its printed length.
